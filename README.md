@@ -21,8 +21,6 @@ The data are mainly collected from:
 - [Public Health Agency of Canada](https://www.canada.ca/en/public-health.html) (PHA)
 - [Baidu](https://voice.baidu.com/act/newpneumonia/newpneumonia)
 - [Mapmiao](https://mapmiao.com/ncov/)
-- The dataset (in SQLite format) can be downloaded from http://hgis.uw.edu/virus/assets/virus.db.
-- You can view the data (in CSV format) at http://hgis.uw.edu/virus/assets/virus.csv.
 
 ## Data Sources by Region:
 #### China - Official Websites
@@ -47,13 +45,6 @@ The data are mainly collected from:
 (A collection of articles and other resources on the Coronavirus (Covid-19) outbreak, including clinical reports, management guidelines, and commentary)
 - [National Health Commission of the People's Republic of China](http://www.nhc.gov.cn/xcs/pfzs/list_gzbd.shtml)
 (Coronavirus(Covid-19) legal knowledge)
-
-
-
-
-
-
-
 
 
 
