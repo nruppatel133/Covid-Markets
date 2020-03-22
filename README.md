@@ -13,3 +13,6 @@ This is the source code for my covid markets site. Feel free to use my source co
 
 ## Contributing
 Please feel free to submit any contributions. 
+
+## License
+See `LICENSE.md` for more licensing information.
