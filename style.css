@@ -1,1 +1,193 @@
+body {
+  background-color: #1f2833;
+  box-sizing: border-box;
+}
 
+.topSymbol {
+  color: #66fcf1;
+  margin: 0;
+  font-size: 40px;
+}
+
+.navbar-brand {
+  color: #66fcf1;
+}
+.price {
+  color: #66fcf1;
+  margin: 0;
+}
+
+.change {
+  color: #66fcf1;
+  font-size: 12px;
+}
+
+.card-body {
+  background-color: #1f2833;
+  color: white;
+  text-align: center;
+  border-radius: 0;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.imgResize {
+  margin: 0 auto;
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.newsStories {
+  margin-top: 20px;
+  color: #45a29e;
+}
+
+.newsHeader {
+  font-size: 20px;
+}
+
+.newsBody {
+  line-height: 1;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.chartRow {
+  margin-top: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #66fcf1;
+}
+a:hover {
+  color: lightslategrey;
+}
+.headline {
+  font-weight: bolder;
+}
+
+.snapshot {
+  box-shadow: 0px 0px 10px black;
+}
+
+.dynamic {
+  height: 400px;
+  overflow: auto;
+  margin: 0 0;
+  box-shadow: 0px 0px 10px black;
+}
+
+.modallogin {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+
+  /* position: relative; */
+}
+
+.loginModal {
+  border-radius: 5px;
+  color: white;
+  background-color: #1f2833;
+  position: relative;
+  width: 50%;
+  height: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.modalcreate {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+
+  /* position: relative; */
+}
+
+.createModal {
+  border-radius: 5px;
+  color: white;
+  background-color: #1f2833;
+  position: relatve;
+  width: 50%;
+  height: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.modalHeader {
+  margin-bottom: 50px;
+  margin-top: 15px;
+}
+
+.closeModal {
+  float: right;
+  cursor: pointer;
+  margin: 0 0 0 0;
+}
+
+.modalButtons {
+  background-color: #66fcf1;
+  border: 1px solid black;
+  transition: background-color 0.2s;
+  width: 150px;
+}
+
+.modalButtons:hover {
+  background-color: #296460;
+}
+
+.modalButtons:active {
+  background-color: #b6fcf7;
+}
+
+.inputName,
+.inputPassword {
+  display: block;
+  width: 40%;
+  margin: 15px auto;
+}
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #343a40;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
