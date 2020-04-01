@@ -50,12 +50,5 @@ The data are mainly collected from:
 
 
 
-
-
-
-
-## Contributing
-Please feel free to submit any contributions. 
-
 ## License
 See `LICENSE.md` for more licensing information.
