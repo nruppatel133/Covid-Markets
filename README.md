@@ -48,7 +48,5 @@ The data are mainly collected from:
 - [National Health Commission of the People's Republic of China](http://www.nhc.gov.cn/xcs/pfzs/list_gzbd.shtml)
 (Coronavirus(Covid-19) legal knowledge)
 
-
-
 ## License
 See `LICENSE.md` for more licensing information.
