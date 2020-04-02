@@ -2,9 +2,6 @@ const axios = require("axios");
 let covid = require("novelcovid");
 const utilities = require("../utilities");
 
-
-
-
 const URL = "https://corona.lmao.ninja/states";
 const keyMapping = {
   country: "country",
