@@ -79,4 +79,41 @@ const covidSortDirections = {
       key: 'desc',
     },
   };
+
   
+const covidFilters = {
+    selectedTypes: {
+      key: 'selectedTypes',
+      defaultValue: Object.keys(covidDataTypes),
+    },
+    groupByCountry: {
+      key: 'groupByCountry',
+      defaultValue: true,
+    },
+    selectedRegions: {
+      key: 'selectedRegions',
+      defaultValue: [covidCountries.all.key]
+    },
+    useLogScale: {
+      key: 'useLogScale',
+      defaultValue: false,
+    },
+    countrySearchQuery: {
+      key: 'countrySearchQuery',
+      defaultValue: '',
+    },
+    dataSort: {
+      key: 'dataSort',
+      defaultValue: covidSorts.confirmed.key,
+    },
+    dataSortDirection: {
+      key: 'dataSortDirection',
+      defaultValue: covidSortDirections.desc.key,
+    },
+  };
+  
+  function loadCovidData() {
+    const defaultDataContainer = {
+      labels: [],
+      ticks: {},
+    };
