@@ -117,3 +117,48 @@ const covidFilters = {
       labels: [],
       ticks: {},
     };
+
+    return Promise
+    .all(Object.values(covidDataTypes).map(
+      dataType => fetch(dataType.dataSourceUrl)
+    ))
+    .then(responses => Promise.all(
+      responses.map(response => response.text())
+    ))
+    .then(dataTypesTicks => {
+      return dataTypesTicks.reduce(
+        (dataContainer, dataTypeTicksCSV, dataTypeIndex) => {
+          const dataType = Object.keys(covidDataTypes)[dataTypeIndex];
+          const dataTypeTicks = Papa.parse(dataTypeTicksCSV).data;
+          dataContainer.labels = dataTypeTicks.shift();
+          dataContainer.ticks[dataType] = dataTypeTicks
+            .filter(regionTicks => {
+              return regionTicks.length === dataContainer.labels.length;
+            })
+            .map(regionTicks => {
+              return regionTicks.map((regionTick, tickIndex) => {
+                if (tickIndex < covidSchema.dateStartColumn) {
+                  return regionTick;
+                }
+                if (!regionTick) {
+                  return 0;
+                }
+                return parseInt(regionTick, 10);
+              });
+            })
+            .sort((regionTicksA, regionTicksB) => {
+              const regionNameA = getRegionKey(regionTicksA);
+              const regionNameB = getRegionKey(regionTicksB);
+              if (regionNameA > regionNameB) {
+                return 1;
+              } else if (regionNameA < regionNameB) {
+                return -1;
+              }
+              return 0;
+            });
+          return dataContainer;
+        },
+        defaultDataContainer
+      );
+    });
+}
