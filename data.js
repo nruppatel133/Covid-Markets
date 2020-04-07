@@ -334,4 +334,6 @@ function calculateMortality(confirmedNumber, deathsNumber) {
     if (mortality < 0) {
       return 0;
     }
-    
+    return Math.floor(1000 * mortality) / 10;
+}
+
