@@ -13,6 +13,11 @@ function useWindowSize() {
         window.removeEventListener('resize', setSize);
         window.removeEventListener('orientationchange', setSize);
       }
+
     }, []);
     return [width, height];
+  }
+
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
   }
