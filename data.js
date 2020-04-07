@@ -249,3 +249,40 @@ function getCovidRegions(covidData) {
         return {key, numbers};
       });
   }
+
+
+function getLastUpdatedDate(covidData) {
+    const dateLabel = covidData.labels[covidData.labels.length - 1];
+    return formatDateLabel(dateLabel);
+  }
+  
+  function formatDateLabel(dateLabel) {
+    const date = new Date(dateLabel);
+    const options = {month: 'short', day: '2-digit'};
+    return date.toLocaleDateString('en-US', options);
+  }
+  
+  function groupCovidDataByCountries(covidData) {
+    const covidDataByCountries = {
+      labels: [],
+      ticks: {},
+    };
+    covidDataByCountries.labels = [...covidData.labels];
+    Object.values(covidDataTypes).forEach((covidDataType) => {
+      covidDataByCountries.ticks[covidDataType.key] = Object.values(covidData.ticks[covidDataType.key]
+        .reduce((countriesTicksMap, regionTicks) => {
+          const countryName = regionTicks[covidSchema.countryColumn];
+          if (!countriesTicksMap[countryName]) {
+            countriesTicksMap[countryName] = [...regionTicks];
+            countriesTicksMap[countryName][covidSchema.stateColumn] = '';
+            return countriesTicksMap;
+          }
+          for (let columnIndex = covidSchema.dateStartColumn; columnIndex < regionTicks.length; columnIndex += 1) {
+            countriesTicksMap[countryName][columnIndex] += regionTicks[columnIndex];
+          }
+          return countriesTicksMap;
+        }, {}));
+    });
+    return covidDataByCountries;
+  }
+  
