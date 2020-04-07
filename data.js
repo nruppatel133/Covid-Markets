@@ -201,3 +201,28 @@ function getRegionKey(regionTicks) {
     });
     return globalTicks;
   }
+
+
+function getTotalCount(covidData, dataTypeKey, regionKeys) {
+    if (regionKeys.includes(covidCountries.all.key)) {
+      const globalTicks = getGlobalTicks(covidData, dataTypeKey);
+      return globalTicks[globalTicks.length - 1];
+    }
+    return regionKeys.reduce((total, regionKey) => {
+      const regionTicks = getRegionByKey(covidData, dataTypeKey, regionKey);
+      if (!regionTicks) {
+        return total;
+      }
+      total += regionTicks[regionTicks.length - 1];
+      return total;
+    }, 0);
+  }
+  
+  function searchRegionTicks(covidData, dataTypeKey, regionKey) {
+    if (!regionKey) {
+      return null;
+    }
+    const regionsTicks = covidData.ticks[dataTypeKey];
+    return regionsTicks.find((regionTicks) => getRegionKey(regionTicks) === regionKey);
+  }
+  
