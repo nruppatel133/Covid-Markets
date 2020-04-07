@@ -225,4 +225,27 @@ function getTotalCount(covidData, dataTypeKey, regionKeys) {
     const regionsTicks = covidData.ticks[dataTypeKey];
     return regionsTicks.find((regionTicks) => getRegionKey(regionTicks) === regionKey);
   }
+
   
+function getCovidRegions(covidData) {
+    return covidData.ticks[covidDataTypes.confirmed.key]
+      .map((regionTicks, regionIndex) => {
+        const key = getRegionKey(regionTicks);
+        const numbers = {};
+        Object.values(covidDataTypes).forEach((covidDataType) => {
+          const regionTicksOfType = covidData.ticks[covidDataType.key][regionIndex];
+          const regionKeyOfType = getRegionKey(regionTicksOfType);
+          if (regionTicksOfType && regionTicksOfType.length === regionTicks.length && regionKeyOfType && regionKeyOfType === key) {
+            numbers[covidDataType.key] = regionTicksOfType[regionTicksOfType.length - 1];
+          } else {
+            const foundRegionTicks = searchRegionTicks(covidData, covidDataType.key, key);
+            if (foundRegionTicks && foundRegionTicks.length === regionTicks.length) {
+              numbers[covidDataType.key] = foundRegionTicks[foundRegionTicks.length - 1];
+            } else {
+              numbers[covidDataType.key] = -1;
+            }
+          }
+        });
+        return {key, numbers};
+      });
+  }
