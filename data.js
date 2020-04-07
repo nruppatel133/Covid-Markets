@@ -285,4 +285,42 @@ function getLastUpdatedDate(covidData) {
     });
     return covidDataByCountries;
   }
+
+  function filterToUrl(filterKey, filterValue) {
+    try {
+      const url = new URL(document.location);
+      url.searchParams.set(filterKey, JSON.stringify(filterValue));
+      history.pushState(null, null, url.href);
+    } catch (e) {
+      console.error('Cannot send filters to URL');
+    }
+  }
   
+  function filtersFromUrl() {
+    const filtersInUrl = {};
+    try {
+      const url = new URL(document.location);
+      Object.values(covidFilters).forEach((covidFilter) => {
+        if (url.searchParams.has(covidFilter.key)) {
+          filtersInUrl[covidFilter.key] = JSON.parse(
+            url.searchParams.get(covidFilter.key)
+          );
+        }
+      });
+    } catch (e) {
+      console.error('Cannot fetch filters from URL');
+    }
+    return filtersInUrl;
+  }
+  
+  function deleteFiltersFromUrl() {
+    try {
+      const url = new URL(document.location);
+      Object.values(covidFilters).forEach((covidFilter) => {
+        url.searchParams.delete(covidFilter.key);
+      });
+      history.pushState(null, null, url.href);
+    } catch (e) {
+      console.error('Cannot delete filters from URL');
+    }
+  }  
