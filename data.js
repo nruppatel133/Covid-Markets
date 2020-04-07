@@ -323,4 +323,15 @@ function getLastUpdatedDate(covidData) {
     } catch (e) {
       console.error('Cannot delete filters from URL');
     }
-  }  
+  }
+  
+  
+function calculateMortality(confirmedNumber, deathsNumber) {
+    if (confirmedNumber === 0) {
+      return 0;
+    }
+    const mortality = deathsNumber / confirmedNumber;
+    if (mortality < 0) {
+      return 0;
+    }
+    
