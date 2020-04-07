@@ -6,3 +6,10 @@ function useWindowSize() {
         setWidth(document.documentElement.clientWidth);
         setHeight(document.documentElement.clientHeight);
       };
+
+      window.addEventListener('resize', setSize);
+      window.addEventListener('orientationchange', setSize);
+      return () => {
+        window.removeEventListener('resize', setSize);
+        window.removeEventListener('orientationchange', setSize);
+      }
