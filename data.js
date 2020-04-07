@@ -201,3 +201,139 @@ function getRegionKey(regionTicks) {
     });
     return globalTicks;
   }
+
+
+function getTotalCount(covidData, dataTypeKey, regionKeys) {
+    if (regionKeys.includes(covidCountries.all.key)) {
+      const globalTicks = getGlobalTicks(covidData, dataTypeKey);
+      return globalTicks[globalTicks.length - 1];
+    }
+    return regionKeys.reduce((total, regionKey) => {
+      const regionTicks = getRegionByKey(covidData, dataTypeKey, regionKey);
+      if (!regionTicks) {
+        return total;
+      }
+      total += regionTicks[regionTicks.length - 1];
+      return total;
+    }, 0);
+  }
+  
+  function searchRegionTicks(covidData, dataTypeKey, regionKey) {
+    if (!regionKey) {
+      return null;
+    }
+    const regionsTicks = covidData.ticks[dataTypeKey];
+    return regionsTicks.find((regionTicks) => getRegionKey(regionTicks) === regionKey);
+  }
+
+  
+function getCovidRegions(covidData) {
+    return covidData.ticks[covidDataTypes.confirmed.key]
+      .map((regionTicks, regionIndex) => {
+        const key = getRegionKey(regionTicks);
+        const numbers = {};
+        Object.values(covidDataTypes).forEach((covidDataType) => {
+          const regionTicksOfType = covidData.ticks[covidDataType.key][regionIndex];
+          const regionKeyOfType = getRegionKey(regionTicksOfType);
+          if (regionTicksOfType && regionTicksOfType.length === regionTicks.length && regionKeyOfType && regionKeyOfType === key) {
+            numbers[covidDataType.key] = regionTicksOfType[regionTicksOfType.length - 1];
+          } else {
+            const foundRegionTicks = searchRegionTicks(covidData, covidDataType.key, key);
+            if (foundRegionTicks && foundRegionTicks.length === regionTicks.length) {
+              numbers[covidDataType.key] = foundRegionTicks[foundRegionTicks.length - 1];
+            } else {
+              numbers[covidDataType.key] = -1;
+            }
+          }
+        });
+        return {key, numbers};
+      });
+  }
+
+
+function getLastUpdatedDate(covidData) {
+    const dateLabel = covidData.labels[covidData.labels.length - 1];
+    return formatDateLabel(dateLabel);
+  }
+  
+  function formatDateLabel(dateLabel) {
+    const date = new Date(dateLabel);
+    const options = {month: 'short', day: '2-digit'};
+    return date.toLocaleDateString('en-US', options);
+  }
+  
+  function groupCovidDataByCountries(covidData) {
+    const covidDataByCountries = {
+      labels: [],
+      ticks: {},
+    };
+    covidDataByCountries.labels = [...covidData.labels];
+    Object.values(covidDataTypes).forEach((covidDataType) => {
+      covidDataByCountries.ticks[covidDataType.key] = Object.values(covidData.ticks[covidDataType.key]
+        .reduce((countriesTicksMap, regionTicks) => {
+          const countryName = regionTicks[covidSchema.countryColumn];
+          if (!countriesTicksMap[countryName]) {
+            countriesTicksMap[countryName] = [...regionTicks];
+            countriesTicksMap[countryName][covidSchema.stateColumn] = '';
+            return countriesTicksMap;
+          }
+          for (let columnIndex = covidSchema.dateStartColumn; columnIndex < regionTicks.length; columnIndex += 1) {
+            countriesTicksMap[countryName][columnIndex] += regionTicks[columnIndex];
+          }
+          return countriesTicksMap;
+        }, {}));
+    });
+    return covidDataByCountries;
+  }
+
+  function filterToUrl(filterKey, filterValue) {
+    try {
+      const url = new URL(document.location);
+      url.searchParams.set(filterKey, JSON.stringify(filterValue));
+      history.pushState(null, null, url.href);
+    } catch (e) {
+      console.error('Cannot send filters to URL');
+    }
+  }
+  
+  function filtersFromUrl() {
+    const filtersInUrl = {};
+    try {
+      const url = new URL(document.location);
+      Object.values(covidFilters).forEach((covidFilter) => {
+        if (url.searchParams.has(covidFilter.key)) {
+          filtersInUrl[covidFilter.key] = JSON.parse(
+            url.searchParams.get(covidFilter.key)
+          );
+        }
+      });
+    } catch (e) {
+      console.error('Cannot fetch filters from URL');
+    }
+    return filtersInUrl;
+  }
+  
+  function deleteFiltersFromUrl() {
+    try {
+      const url = new URL(document.location);
+      Object.values(covidFilters).forEach((covidFilter) => {
+        url.searchParams.delete(covidFilter.key);
+      });
+      history.pushState(null, null, url.href);
+    } catch (e) {
+      console.error('Cannot delete filters from URL');
+    }
+  }
+  
+  
+function calculateMortality(confirmedNumber, deathsNumber) {
+    if (confirmedNumber === 0) {
+      return 0;
+    }
+    const mortality = deathsNumber / confirmedNumber;
+    if (mortality < 0) {
+      return 0;
+    }
+    return Math.floor(1000 * mortality) / 10;
+}
+
