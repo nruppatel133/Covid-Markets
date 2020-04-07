@@ -39,3 +39,33 @@ const covidDataTypes = {
       badgeClass: 'badge-danger',
     },
   };
+
+
+const covidCountries = {
+    all: {
+      key: 'Global',
+      title: 'Global',
+      index: -1,
+    }
+  };
+  
+  const covidSorts = {
+    country: {
+      key: 'country',
+    },
+    confirmed: {
+      key: 'confirmed',
+      dataKey: covidDataTypes.confirmed.key,
+    },
+    recovered: {
+      key: 'recovered',
+      dataKey: covidDataTypes.recovered.key,
+    },
+    deaths: {
+      key: 'deaths',
+      dataKey: covidDataTypes.deaths.key,
+    },
+    mortality: {
+      key: 'mortality',
+    },
+  };
