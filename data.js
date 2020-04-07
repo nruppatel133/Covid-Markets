@@ -69,3 +69,135 @@ const covidCountries = {
       key: 'mortality',
     },
   };
+
+
+const covidSortDirections = {
+    asc: {
+      key: 'asc',
+    },
+    desc: {
+      key: 'desc',
+    },
+  };
+
+  
+const covidFilters = {
+    selectedTypes: {
+      key: 'selectedTypes',
+      defaultValue: Object.keys(covidDataTypes),
+    },
+    groupByCountry: {
+      key: 'groupByCountry',
+      defaultValue: true,
+    },
+    selectedRegions: {
+      key: 'selectedRegions',
+      defaultValue: [covidCountries.all.key]
+    },
+    useLogScale: {
+      key: 'useLogScale',
+      defaultValue: false,
+    },
+    countrySearchQuery: {
+      key: 'countrySearchQuery',
+      defaultValue: '',
+    },
+    dataSort: {
+      key: 'dataSort',
+      defaultValue: covidSorts.confirmed.key,
+    },
+    dataSortDirection: {
+      key: 'dataSortDirection',
+      defaultValue: covidSortDirections.desc.key,
+    },
+  };
+  
+  function loadCovidData() {
+    const defaultDataContainer = {
+      labels: [],
+      ticks: {},
+    };
+
+    return Promise
+    .all(Object.values(covidDataTypes).map(
+      dataType => fetch(dataType.dataSourceUrl)
+    ))
+    .then(responses => Promise.all(
+      responses.map(response => response.text())
+    ))
+    .then(dataTypesTicks => {
+      return dataTypesTicks.reduce(
+        (dataContainer, dataTypeTicksCSV, dataTypeIndex) => {
+          const dataType = Object.keys(covidDataTypes)[dataTypeIndex];
+          const dataTypeTicks = Papa.parse(dataTypeTicksCSV).data;
+          dataContainer.labels = dataTypeTicks.shift();
+          dataContainer.ticks[dataType] = dataTypeTicks
+            .filter(regionTicks => {
+              return regionTicks.length === dataContainer.labels.length;
+            })
+            .map(regionTicks => {
+              return regionTicks.map((regionTick, tickIndex) => {
+                if (tickIndex < covidSchema.dateStartColumn) {
+                  return regionTick;
+                }
+                if (!regionTick) {
+                  return 0;
+                }
+                return parseInt(regionTick, 10);
+              });
+            })
+            .sort((regionTicksA, regionTicksB) => {
+              const regionNameA = getRegionKey(regionTicksA);
+              const regionNameB = getRegionKey(regionTicksB);
+              if (regionNameA > regionNameB) {
+                return 1;
+              } else if (regionNameA < regionNameB) {
+                return -1;
+              }
+              return 0;
+            });
+          return dataContainer;
+        },
+        defaultDataContainer
+      );
+    });
+}
+
+
+function getRegionKey(regionTicks) {
+    if (!regionTicks || !regionTicks.length) {
+      return null;
+    }
+    const country = regionTicks[covidSchema.countryColumn];
+    const state = regionTicks[covidSchema.stateColumn];
+    return state ? `${country} - ${state}` : `${country}`;
+  }
+  
+  function getRegionIndexByKey(covidData, dataTypeKey, regionKey) {
+    return covidData.ticks[dataTypeKey].findIndex(
+      regionTicks => getRegionKey(regionTicks) === regionKey
+    );
+  }
+  
+  function getRegionByKey(covidData, dataTypeKey, regionKey) {
+    const regionIndex = getRegionIndexByKey(covidData, dataTypeKey, regionKey);
+    return covidData.ticks[dataTypeKey][regionIndex];
+  }
+  
+  function getGlobalTicks(covidData, dataTypeKey) {
+    const totalTicks = covidData.ticks[dataTypeKey][0].length;
+    const globalTicks = new Array(totalTicks).fill(0);
+    globalTicks[covidSchema.stateColumn] = '';
+    globalTicks[covidSchema.countryColumn] = covidCountries.all.title;
+    globalTicks[covidSchema.latColumn] = '';
+    globalTicks[covidSchema.lonColumn] = '';
+    covidData.ticks[dataTypeKey].forEach(regionTicks => {
+      regionTicks.forEach((regionTick, tickIndex) => {
+        if (tickIndex < covidSchema.dateStartColumn) {
+          return;
+        }
+        globalTicks[tickIndex] += regionTick;
+      });
+    });
+    return globalTicks;
+  }
