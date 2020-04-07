@@ -69,3 +69,14 @@ const covidCountries = {
       key: 'mortality',
     },
   };
+
+
+const covidSortDirections = {
+    asc: {
+      key: 'asc',
+    },
+    desc: {
+      key: 'desc',
+    },
+  };
+  
