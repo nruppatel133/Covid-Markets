@@ -8,3 +8,5 @@ Abdullah
 The map should go in the `<Article>` TAGS in HTML. 
 
 As a visual. Its above Covid Markets footer and below the deaths recovered and confirmed. 
+
+# THANK YOU
