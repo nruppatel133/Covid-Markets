@@ -1,0 +1,290 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title onclick="location.href='./covidmarkets/index.html'">🦠Covid Markets</title>
+  <meta name="covidmarkets/environment"
+    content="%7B%22environment%22%3A%22production%22%2C%22modulePrefix%22%3A%22coronavirus-tracker%22%2C%22rootURL%22%3A%22%2Fcoronavirus-tracker%2F%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_DEFAULT_ASYNC_OBSERVERS%22%3Atrue%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22API_HOST%22%3A%22https%3A%2F%2Fcoronavirus-tracker-api.herokuapp.com%22%2C%22name%22%3A%22coronavirus-tracker%22%2C%22version%22%3A%220.0.0%2Be04b13e2%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22isModuleUnification%22%3Afalse%7D" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="map.style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
+
+</head>
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Covid Markets 🦠 <i class="fas fa-dollar-sign"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control mr-sm-2" type="text" id="stockSymbol" placeholder="stock symbol" aria-label="Search"
+      onchange="chartIt()" value="amd" />
+    <button class="btn btn-outline-success my-1 my-sm-0" id="stockSearch" onclick="chartIt()">
+      🔎Search
+    </button>
+
+
+    <button class="btn btn-outline-success my-1 my-sm-0" id="data" onclick="location.href='../covidmarkets/data.html'">
+      <a href=""></a>
+      📊Data
+    </button>
+
+    <button class="btn btn-outline-success my-1 my-sm-0" id="map" onclick="location.href='../covidmarkets/map.html'">
+      <a href="    "></a>
+      🗺️Map
+    </button>
+
+    <button class="btn btn-outline-success my-1 my-sm-0" id="research"
+      onclick="location.href='../covidmarkets/research.html'">
+      <a href="    "></a>
+      🔬Research
+    </button>
+  </nav>
+
+
+  <section>
+    <script src="map.js"></script>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 text-warning my-3">
+          <h4>Infected</h4>
+          <p class="display-4">
+            <div id="totalCases" class="display-4"></div>
+          </p>
+        </div>
+        <div class="col-md-4 text-success my-3">
+          <h4>Recovered</h4>
+          <p class="display-4">
+            <div id="totalRecovered" class="display-4"></div>
+          </p>
+        </div>
+        <div class="col-md-4 text-danger my-3">
+          <h4>Deaths</h4>
+          <p class="display-4">
+            <div id="totalDeath" class="display-4"></div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="covid.data.js" defer></script>
+  </section>
+
+
+
+  <article>
+
+    <div id="map-react"></div>
+
+  </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    <a href="http://www.covidmarkets.com/">Covid Markets</a>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script src="script.js" defer></script>
+  <script src="{{rootURL}}map.js"></script>
+  <script src="{{rootURL}}vendor.map.js"></script>
+
+  <script type="text/babel">
+    // import React, { useRef, useEffect } from 'react';
+    // import mapboxgl from 'mapbox-gl';
+    // import useSWR from 'swr';
+    // import lookup from 'country-code-lookup';
+    // import 'App.scss';
+    // // Need mapbox css for tooltips later in the tutorial
+    // import 'mapbox-gl/dist/mapbox-gl.css';
+
+    // mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+
+    class Quiz extends React.Component {
+      mapboxElRef = useRef(null); // DOM element to render map
+
+      fetcher = (url) =>
+        fetch(url)
+          .then((r) => r.json())
+          .then((data) =>
+            data.map((point, index) => ({
+              type: 'Feature',
+              geometry: {
+                type: 'Point',
+                coordinates: [point.coordinates.longitude, point.coordinates.latitude]
+              },
+              properties: {
+                id: index,
+                country: point.country,
+                province: point.province,
+                cases: point.stats.confirmed,
+                deaths: point.stats.deaths
+              }
+            }))
+          );
+
+      data = useSWR('https://corona.lmao.ninja/v2/jhucsse', fetcher);
+
+      // Initialize our map
+      useEffect = (() => {
+        if (data) {
+          const map = new mapboxgl.Map({
+            container: mapboxElRef.current,
+            style: 'mapbox://styles/notalemesa/ck8dqwdum09ju1ioj65e3ql3k',
+            center: [16, 27],
+            zoom: 2
+          });
+
+          // Add navigation controls to the top right of the canvas
+          map.addControl(new mapboxgl.NavigationControl());
+
+          map.once('load', function () {
+            // Add our SOURCE
+            map.addSource('points', {
+              type: 'geojson',
+              data: {
+                type: 'FeatureCollection',
+                features: data
+              }
+            });
+
+            // Add our layer
+            map.addLayer({
+              id: 'circles',
+              source: 'points', // this should be the id of source
+              type: 'circle',
+              paint: {
+                'circle-opacity': 0.75,
+                'circle-stroke-width': ['interpolate', ['linear'], ['get', 'cases'], 1, 1, 100000, 1.75],
+                'circle-radius': [
+                  'interpolate',
+                  ['linear'],
+                  ['get', 'cases'],
+                  1,
+                  4,
+                  1000,
+                  8,
+                  4000,
+                  10,
+                  8000,
+                  14,
+                  12000,
+                  18,
+                  100000,
+                  40
+                ],
+                'circle-color': [
+                  'interpolate',
+                  ['linear'],
+                  ['get', 'cases'],
+                  1,
+                  '#ffffb2',
+                  5000,
+                  '#fed976',
+                  10000,
+                  '#feb24c',
+                  25000,
+                  '#fd8d3c',
+                  50000,
+                  '#fc4e2a',
+                  75000,
+                  '#e31a1c',
+                  100000,
+                  '#b10026'
+                ]
+              }
+            });
+
+            const popup = new mapboxgl.Popup({
+              closeButton: false,
+              closeOnClick: false
+            });
+
+            let lastId;
+
+            map.on('mousemove', 'circles', (e) => {
+              const id = e.features[0].properties.id;
+
+              if (id !== lastId) {
+                lastId = id;
+                const { cases, deaths, country, province } = e.features[0].properties;
+
+                // Change the pointer type on mouseenter
+                map.getCanvas().style.cursor = 'pointer';
+
+                const coordinates = e.features[0].geometry.coordinates.slice();
+
+                const countryISO = lookup.byCountry(country)?.iso2 || lookup.byInternet(country)?.iso2;
+                const provinceHTML = province !== 'null' ? `<p>Province: <b>${province}</b></p>` : '';
+                const mortalityRate = ((deaths / cases) * 100).toFixed(2);
+                const countryFlagHTML = Boolean(countryISO)
+                  ? `<img src="https://www.countryflags.io/${countryISO}/flat/64.png"></img>`
+                  : '';
+
+                const HTML = `<p>Country: <b>${country}</b></p>
+              ${provinceHTML}
+              <p>Cases: <b>${cases}</b></p>
+              <p>Deaths: <b>${deaths}</b></p>
+              <p>Mortality Rate: <b>${mortalityRate}%</b></p>
+              ${countryFlagHTML}`;
+
+                // Ensure that if the map is zoomed out such that multiple
+                // copies of the feature are visible, the popup appears
+                // over the copy being pointed to.
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+
+                popup.setLngLat(coordinates).setHTML(HTML).addTo(map);
+              }
+            });
+
+            map.on('mouseleave', 'circles', function () {
+              lastId = undefined;
+              map.getCanvas().style.cursor = '';
+              popup.remove();
+            });
+          });
+        }
+      }, [data]);
+    // export default App;
+    }
+    </script>
+</body>
+
+</html>
