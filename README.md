@@ -2,7 +2,6 @@
 This is a website I made to track the ongoing Coronavirus Market Conditions.
 [Live Site](http://www.covidmarkets.com/)
 
-
 ## Installing
 
 
