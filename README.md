@@ -2,11 +2,11 @@
 This is a website I made to track the ongoing Coronavirus Market Conditions.
 [Live Site](http://www.covidmarkets.com/)
 Website is live, but a lot still needs to get built. Current V2. Check [My Twitter](https://twitter.com/NrupPatel13) for updates
-## Home Page
+## [Home Page](https://www.covidmarkets.com/)
 ![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.25.15%20PM.png) 
-## Vaccine Tracker
+## [Vaccine Tracker](https://www.covidmarkets.com/research.html)
 ![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.25.43%20PM.png)
-## Reopening Page
+## [Reopening Page](https://www.covidmarkets.com/reopen.html)
 ![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.26.09%20PM.png)
 #
 ## Mobile View 
