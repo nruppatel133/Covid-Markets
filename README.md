@@ -8,13 +8,8 @@ Website is live, but a lot still needs to get built. Current V2. Check [My Twitt
 ![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.25.43%20PM.png)
 ## [Reopening Page](https://www.covidmarkets.com/reopen.html)
 ![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.26.09%20PM.png)
-#
-## Mobile View 
-![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.26.09%20PM.png)
 
 
-## How to Use
-This is the source code for my covid markets site. TL;DR - Feel free to use my source code as inspiration or templates for your own sites/projects. Use my code for whatever you want, extend it, make it your own, but for the love of god please give credit. If you use my code, please hit me up, would love to see what you do with it
 ## Data Sources:
 The data are mainly collected from:
 - [National Health Commission](http://en.nhc.gov.cn/) (NHC) of the People’s Republic of China
