@@ -2,10 +2,16 @@
 This is a website I made to track the ongoing Coronavirus Market Conditions.
 [Live Site](http://www.covidmarkets.com/)
 Website is live, but a lot still needs to get built. Current V2. Check [My Twitter](https://twitter.com/NrupPatel13) for updates
+## Home Page
+![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.25.15%20PM.png) 
+## Vaccine Tracker
+![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.25.43%20PM.png)
+## Reopening Page
+![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.26.09%20PM.png)
+#
+## Mobile View 
+![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.26.09%20PM.png)
 
-![Live Picture](    ) 
-![Live Picture](      )
-![Live Picture](      )
 
 ## How to Use
 This is the source code for my covid markets site. TL;DR - Feel free to use my source code as inspiration or templates for your own sites/projects. Use my code for whatever you want, extend it, make it your own, but for the love of god please give credit. If you use my code, please hit me up, would love to see what you do with it
