@@ -1,6 +1,4 @@
 # 🦠 Covid Markets
-
-
 This is a website I made to track the ongoing Coronavirus Market Conditions.
 [Live Site](http://www.covidmarkets.com/)
 Website is live, but a lot still needs to get built. Current V2. Check [My Twitter](https://twitter.com/NrupPatel13) for updates
