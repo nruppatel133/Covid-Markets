@@ -1,8 +1,8 @@
 # 🦠 Covid Markets
 
-This is a website I made to track the ongoing Coronavirus Market Conditions.
+This is a website I made to track the ongoing Coronavirus Market Conditions. Get in touch with me for the source code and any other questions! :)
 [Live Site](http://www.covidmarkets.com/)
-Website is live, but a lot still needs to get built. Current V2. Check [My Twitter](https://twitter.com/NrupPatel13) for updates
+Website is live, but a lot still needs to get built. Current V5. Check [My Twitter](https://twitter.com/NrupPatel13) for updates
 ## [Home Page](https://www.covidmarkets.com/)
 ![Live Picture](https://github.com/nruppatel133/Covid-Markets/blob/master/Screen%20Shot%202020-07-03%20at%2010.25.15%20PM.png) 
 ## [Vaccine Tracker](https://www.covidmarkets.com/research.html)
