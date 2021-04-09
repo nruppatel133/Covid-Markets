@@ -1,0 +1,766 @@
+	<!--This is the source code for my covid markets site. 
+TL;DR - Feel free to use my source code as inspiration or templates for your own sites/projects. 
+Use my code for whatever you want, extend it, make it your own, but for the love of god please give credit.
+ If you use my code, please hit me up, would love to see what you do with it,
+I'll even send you the source code and help you integrate it into your project.-->
+<html lang="en">
+
+   <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166789725-1"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+         
+           gtag('config', 'UA-166789725-1');
+      </script>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Covid Markets Vaccine Tracker</title>
+      <meta name="description" content="Live Covid-19 Vaccine tracker updated daily. The first website to create a COVID-19 interactive vaccine tracker. View the website for at-a-glance updates on the race to develop a COVID-19 vaccine." />
+      <meta content="Covid-19 cure, Coronavirus Vaccine, Oxford Trials, UK Vaccine, Gilead Sciences, Roche, Pfizer, Biogen, Abbott, PPD, LabCorp, Merck &amp; Co., hydroxychloroquine, remdesivir, Pharma" name="keywords" />
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://covidmarkets.com/">
+      <meta property="og:title" content="Covid Markets">
+      <meta property="og:description" content="Live Covid-19 Tracker. See Reopening dates, Latest News, Vaccine Tracker, Treatments Source, and learn about prevention measures.">
+      <meta name="twitter:title" content="Covid Markets: Vaccine Tracker, Reopening Dates, and more.">
+      <meta name="twitter:description" content="Live Covid-19 Tracker. See Reopening dates, Latest News, Vaccine Tracker, Treatments Source, and learn about prevention measures.">
+      <meta name="twitter:creator" content="@NrupPatel13">
+      <meta name="twitter:card" content="summary_large_image" />
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/apple-touch-icon-60x60.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
+      <link rel="icon" type="image/png" href="images/favicon-196x196.png" sizes="196x196" />
+      <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+      <link rel="icon" type="image/png" href="images/favicon-128.png" sizes="128x128" />
+      <meta name="application-name" content="&nbsp;" />
+      <meta name="msapplication-TileColor" content="#FFFFFF" />
+      <meta name="msapplication-TileImage" content="images/mstile-144x144.png" />
+      <meta name="msapplication-square70x70logo" content="images/mstile-70x70.png" />
+      <meta name="msapplication-square150x150logo" content="images/mstile-150x150.png" />
+      <meta name="msapplication-wide310x150logo" content="images/mstile-310x150.png" />
+      <meta name="msapplication-square310x310logo" content="images/mstile-310x310.png" />
+     <link rel="canonical" href="https://covidmarkets.com/">
+     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+     <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+     <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="research.style.css" />
+     <link rel="stylesheet" href="app.style.css" />
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+     
+       <script src="https://unpkg.com/vue"></script>
+       <!-- Full bundle -->
+       <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+   
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+   
+     <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Mono|Roboto+Slab|Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">Covid Markets <img style="background-color: transparent; width: 28px; height: 28px; margin-bottom: 3px;" src="https://img.icons8.com/emoji/48/000000/microbe.png"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>  
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <button class="btn nav-link" id="research" onclick="location.href='../research.html'">
+                <span class="m-icon"><img style="background-color: transparent; width: 28px; height: 28px;"src="https://img.icons8.com/emoji/48/000000/syringe-emoji.png"/></span>
+                   Vaccine Progress
+                </button>
+            </li>
+            <li class="nav-item">
+              <button class="btn nav-link" id="research" onclick="location.href='../reopen.html'">
+                <span class="m-icon"><img  style="background-color: transparent; width: 28px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/locked-with-key.png"/></span>
+                   Reopening 
+                </button>
+            </li>
+            <li class="nav-item">
+              <button class="btn nav-link" id="research" onclick="location.href='../app.html'">
+                <span class="m-icon"><img style="background-color: transparent; width: 28px; height: 28px; margin-top: 2px;" src="https://img.icons8.com/emoji/48/000000/airplane-emoji.png"/></span>
+                   Travel
+                </button>
+            </li>    
+            <li class="nav-item">
+              <button class="btn nav-link" id="data" onclick="location.href='../data.html'">
+                <span class="m-icon"><img  style="background-color: transparent; width: 28px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/crossed-fingers-emoji.png"/></span>
+                   Outcome
+                </button>
+            </li> 
+            <li class="nav-item">
+           <button class="btn nav-link" id="map" onclick="location.href='../map.html'">
+            <span class="m-icon"><img style="background-color: transparent; width: 32px; height: 32px;" src="https://img.icons8.com/emoji/48/000000/globe-showing-americas-emoji.png"/></span>
+                 Map
+              </button>
+            </li>    
+            <li class="nav-item">
+              <button class="btn nav-link" id="research" onclick="location.href='../beforeafter.html'">
+                <span class="m-icon"><img  style="background-color: transparent; width: 28px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/information-emoji.png"/></span>
+                 Wiki
+              </button>
+            </li>    
+            <li class="nav-item">
+              <button class="btn nav-link" id="research" onclick="location.href='../about.html'">
+                <span class="m-icon"><img  style="background-color: transparent; width: 26px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/blue-book.png"/></span>
+                 About
+              </button>
+            </li>    
+          </ul>
+        </div>  
+      </nav>
+     <section class="bg-white">
+      <header>
+         <div class="main-font">
+           <h1 class="second-font">
+             Tracking Treatments
+           </h1>
+           <center><div style="color: black; font-size: 12px; font-weight: lighter;">Last updated: <script>
+       
+             var mydate=new Date()
+             var year=mydate.getYear()
+             if (year < 1000)
+             year+=1900
+             var day=mydate.getDay()
+             var month=mydate.getMonth()
+             var daym=mydate.getDate()
+             if (daym<10)
+             daym="0"+daym
+             var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+             var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+             document.write("<div><font color='000000' fontWeight='lighter' font-size='8px'><b>"+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></div>")
+             
+             </script> </div> </center>
+              </small>
+           </div>
+           <div class="text-center py-4">
+             <a class="btn btn-default btn-round third-font m-0" style="color: black; font-size: 19px; padding-right: 10px; padding: 5px 15px 5px 15px;">
+               <center>Treatments and Vaccines</center>
+             </a>
+           </div>
+           <!--World Info-->
+           <!--World Info-->
+           <div class="container" id="home">
+             <div class="row">
+                <div class="col-md-4">
+                   <div class="card center-align">
+                      <div class="card-content">
+                         <h5 class="diffrent" style="font-size: 1rem;">In Consideration</h5>
+                         <h3 class="blue-text count" style="font-size: 1.60rem;" id="">
+                            <center> 233 Treatments </center>
+                         </h3>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-4">
+                   <div class="card center-align">
+                      <div class="card-content">
+                         <h5 class="diffrent" style="font-size: 1rem;"> In Development </h5>
+                         <h3 class="cyan-text count" style="font-size: 1.60rem;" id="">
+                            <center> 163 Vaccines </center>
+                         </h3>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-4">
+                   <div class="card center-align">
+                      <div class="card-content">
+                         <h5 class="diffrent" style="font-size: 1rem;"> Approved </h5>
+                         <h3 class="cyan-text count" style="font-size: 1.60rem;" id="">
+                            <center> 0 Vaccines </center>
+                         </h3>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </header>
+   
+       
+        
+       <hr style="color: black;">
+   
+       <div class="text-center" style="padding-top: 15px; margin-bottom: -20px;">
+        <a class="btn btn-default btn-lg btn-round third-font" style="color: black;  font-size: 22px; font-weight: 500; padding: 6px 14px 6px 20px;">
+           <center>Phase <img style="background-color: transparent; height: 30px; width: 30px; margin-left: 2px;margin-bottom:2px; " src="https://img.icons8.com/fluent/48/000000/to-do.png"/> </center>
+        </a></div>
+        
+        
+       <section id="id-timeline">
+          <div class="customContainer" id="home">
+             <div class="row row-flex" id="slider">
+                <div class="col-md-3">
+                   <div class="card center-align">
+                      <div class="card-content">
+                         <h4 class="diffrent" style="font-size: 24px;">Phase 1</h4>
+                         <h6 class="diffrent2" style="background-color: #ED6A5A; margin-top: 13px; color: white; font-size: 13px; padding-top: 8px; padding-bottom: 8px;">
+                            Exploratory Stage 
+                            <p style="margin-top: -10px;"></p>
+                            Laboratory Studies | 1-3 Months
+                         </h6>
+                         <div class="d-flex justify-content-center" style="padding-top: 20px;">
+                            <div class="progress-cir">
+                               <div class="barOverflow">
+                                 <div class="bar phase1"></div>
+                               </div>
+                               <span>100</span>%
+                             </div>
+                         </div>
+                         <hr style="margin-bottom: 4px;">
+                         <div class="text-center">
+                            <a class="btn btn-default btn-round third-font m-3" style="color: black; font-size: 17px; font-weight: 500; margin-top: 1px; margin-bottom: 10px; padding-right: 10px; padding: 5px 13px 5px 15px;">
+                               <center>Basic Criteria</center>
+                            </a>
+                         </div>
+                         <h7 class="diffrent" style="padding-top: 10px; font-size: 15px;">This stage involves laboratory research where scientists identify information relevant to the vaccine development of Coronavirus. This includes calculating rate of infection, rate of fatality, and much more.</h7>
+                         <hr>
+                         <div class="text-center">
+                            <a class="btn btn-default btn-round third-font m-2" style="color: black; font-size: 17px; font-weight: 500; margin-top: 15px; margin-bottom: 10px; padding-right: 10px; padding: 5px 13px 5px 15px;">
+                               <center>Identification</center>
+                            </a>
+                         </div>
+                         <div style="padding-top: 10px; padding-bottom: 3px; padding-left: 10px; padding-right: 10px;">
+                            <h7 class="diffrent" style="padding-top: 10px; font-size: 13.7px; padding-bottom: 10px;">Identification of natural or synthetic antigens that might help prevent or treat the virus.</h7>
+                         </div>
+                         <h3 class="blue-text count" id="total_cases_World"></h3>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-3">
+                   <div class="card center-align">
+                      <div class="card-content">
+                         <h4 class="diffrent" style="font-size: 24px;">Phase 2</h4>
+                         <h6 class="diffrent2" style="background-color: #ECDE5A; margin-top: 13px; color: white; font-size: 13px; font-size: 14px; padding-top: 8px; padding-bottom: 8px;">
+                            Pre-Clinical Stage 
+                            <p style="margin-top: -10px;"></p>
+                            Vaccine Concept | 2-6 months
+                         </h6>
+                         <div class="d-flex justify-content-center"  style="padding-top: 20px;">
+                            <div class="progress-cir">
+                               <div class="barOverflow">
+                                 <div class="bar phase2"></div>
+                               </div>
+                               <span>97</span>%
+                             </div>
+                         </div>
+                         <hr style="margin-bottom: 4px;">
+                         <div class="text-center">
+                            <a class="btn btn-default btn-round third-font m-3" style="color: black; font-size: 17px; font-weight: 500; margin-top: 1px; margin-bottom: 10px; padding-right: 10px; padding: 5px 13px 5px 15px;">
+                               <center>Basic Criteria</center>
+                            </a>
+                         </div>
+                         <h7 class="diffrent" style="padding-top: 10px; font-size: 15px;">Small trails to identify whether the vaccine is safe for humans and what immune response it evokes. Most vaccines in trial never progress beyond this stage since they fail to produce a desired immune response.</h7>
+                         <hr>
+                         <div class="text-center">
+                            <a class="btn btn-default btn-round third-font m-2" style="color: black; font-size: 17px; font-weight: 500; margin-top: 15px; margin-bottom: 10px; padding-right: 10px; padding: 5px 13px 5px 15px;">
+                               <center>Identification</center>
+                            </a>
+                         </div>
+                         <div style="padding-top: 12px; padding-bottom: 3px; padding-left: 10px; padding-right: 10px;">
+                            <h7 class="diffrent" style="padding-top: 10px; font-size: 13.7px; padding-bottom: 10px;">Identification of natural or synthetic antigens that might help prevent or treat the virus.</h7>
+                         </div>
+                         <h3 class="blue-text count" id="total_cases_World"></h3>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-3">
+                   <div class="card center-align">
+                      <div class="card-content">
+                         <h4 class="diffrent" style="font-size: 24px;">Phase 3</h4>
+                         <h6 class="diffrent2" style="background-color: #EAA956; margin-top: 13px; color: white; font-size: 13px; padding-top: 8px; padding-bottom: 8px;">
+                            Clinical Development 
+                            <p style="margin-top: -10px;"></p>
+                            Testing & Creation | 2-6 months
+                         </h6>
+                         <div class="d-flex justify-content-center"  style="padding-top: 20px;">
+                            <div class="progress-cir">
+                               <div class="barOverflow">
+                                 <div class="bar phase3"></div>
+                               </div>
+                               <span>3</span>%
+                             </div>
+                         </div>
+                         <hr style="margin-bottom: 4px;">
+                         <div class="text-center">
+                            <a class="btn btn-default btn-round third-font m-3" style="color: black; font-size: 17px; font-weight: 500; margin-top: 1px; margin-bottom: 10px; padding-right: 10px; padding: 5px 13px 5px 15px;">
+                               <center>Basic Criteria</center>
+                            </a>
+                         </div>
+                         <h7 class="diffrent" style="padding-top: 10px; font-size: 15px;">This is where the vaccine is first tested in humans. This is built on consent informed of volunteers to test the vaccine, this largely involves the principles on vaccine safety and effectiveness.</h7>
+                         <hr>
+                         <div class="text-center">
+                            <a class="btn btn-default btn-round third-font m-2" style="color: black; font-size: 17px; font-weight: 500; margin-top: 15px; margin-bottom: 10px; padding-right: 10px; padding: 5px 13px 5px 15px;">
+                               <center>Identification</center>
+                            </a>
+                         </div>
+                         <div style="padding-top: 12px; padding-bottom: 3px; padding-left: 10px; padding-right: 10px;">
+                            <h7 class="diffrent" style="padding-top: 10px; font-size: 13.7px; padding-bottom: 10px;">Identification, if the candidate vaccine is safe to use, hold many test subjects, and effectiveness of the vaccine.</h7>
+                         </div>
+                         <h3 class="blue-text count" id="total_cases_World"></h3>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-3">
+                   <div class="card center-align">
+                      <div class="card-content">
+                         <h4 class="diffrent" style="font-size: 24px;">Phase 4</h4>
+                         <h6 class="diffrent2" style="background-color: #91F275; margin-top: 13px;  color: white; font-size: 13px; padding-top: 8px; padding-bottom: 8px;">
+                            Regulatory Approval 
+                            <p style="margin-top: -10px;"></p>
+                            Review | 1-3 months
+                         </h6>
+                         <div class="d-flex justify-content-center"  style="padding-top: 20px;">
+                            <div class="progress-cir">
+                               <div class="barOverflow">
+                                 <div class="bar phase4"></div>
+                               </div>
+                               <span>0</span>%
+                             </div>
+                         </div>
+                         <hr style="margin-bottom: 4px;">
+                         <div class="text-center">
+                            <a class="btn btn-default btn-round third-font m-3" style="color: black; font-size: 17px; font-weight: 500; margin-top: 1px; margin-bottom: 10px; padding-right: 10px; padding: 5px 13px 5px 15px;">
+                               <center>Basic Criteria</center>
+                            </a>
+                         </div>
+                         <h7 class="diffrent" style="padding-top: 10px; font-size: 15px;">If the candidate vaccine passes through previous stages of clinical development, the treatment developer submits an application to the FDA(Food and Drug Administration). Approval times vary.</h7>
+                         <hr>
+                         <div class="text-center">
+                            <a class="btn btn-default btn-round third-font m-2" style="color: black; font-size: 17px; font-weight: 500; margin-top: 15px; margin-bottom: 10px; padding-right: 10px; padding: 5px 13px 5px 15px;">
+                               <center>Identification</center>
+                            </a>
+                         </div>
+                         <div style="padding-top: 10px; padding-bottom: 3px; padding-left: 10px; padding-right: 10px;">
+                            <h7 class="diffrent" style="padding-top: 10px; font-size: 13.7px; padding-bottom: 10px;">Identification of a decision by the regulatory board to recommend or oppose the approval of a vaccine.</h7>
+                         </div>
+                         <h3 class="blue-text count" id="total_cases_World"></h3>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </section>
+      
+      </div>
+   
+   <hr>
+   
+   <div class="text-center" style="padding-top: 15px; padding-bottom:10px;"><a class="btn btn-default btn-lg btn-round third-font" style="color: black;  font-size: 20px; font-weight: 500; padding: 6px 14px 3px 20px;">
+     <center>Vaccine Progress<img style="background-color: transparent; height: 30px; width: 30px; margin-left: 5px;margin-bottom:10px; " src="https://img.icons8.com/color/48/000000/microscope.png"/> </center>
+     </a></div>
+   
+   
+      <div id="app" style="margin-top: 10px;margin-bottom:40px; border-bottom: 5px black;">
+   
+      <div class="columns mobFlow">
+        <aside class="column is-2 menu section overflow-custom-hor" style="overflow-y: scroll;">
+           <p class="menu-label">All Vaccinations</p>
+           <ul class="menu-list text-dark pl-1">
+               <li><a :class="{'is-active': selected == null}" @click="selected = null">All Vaccinations</a></li>
+           </ul>
+           <div v-for="phaseid in phaseOrderSidebar">
+               <p class="menu-label" style="margin-top: 10px">{{ phases[phaseid] }}</p>
+               <ul class="menu-list text-dark pl-1">
+                   <li v-for="vaccine in vaccinationsByPhase[phaseid]">
+                       <a style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap" :class="{'is-active': selected == vaccine.vaccinename}" @click="selected = vaccine.vaccinename">{{ vaccine.vaccinename }}</a>
+                   </li>
+               </ul>
+           </div>
+           
+       </aside>
+   
+        <div class="column section pt-0" style="overflow: hidden;overflow-y: scroll;height: 95vh">
+            <div v-if="selected == null">
+                <b-tabs class='overflow-custom-ver'>
+                    <b-tab-item v-for="phaseid in phaseOrder" v-if="vaccinationsByPhase[phaseid]" :label="phases[phaseid] + ' (' + vaccinationsByPhase[phaseid].length + ')'">
+                <center class="stickyFix"> <h3 class="is-size-3 btn btn-default btn-round third-font m-4" style="color: black; font-size: 19px; padding-right: 10px; padding: 5px 15px 5px 15px;">Vaccinations in status: {{ phases[phaseid] }}</h3> </center>  
+                    
+                <div class="columns is-multiline" style="padding-top: 20px;">
+                            <div class="col-md-4" v-for="vaccine in vaccinationsByPhase[phaseid]">
+                                <div class="card2 mb-4">
+                                    <div class="card-content2">
+                                        <div v-if="company in companies" class="is-size-6" v-for="company in vaccine.companyname.split(',')" style="float: right">
+                                            <img style="margin-left: 10px; border-radius:16px;" :src="'https://www.countryflags.io/' + companies[company].companycountrycode + '/flat/48.png'" style="vertical-align: middle; border-radius: 20px;">                                        
+                                        </div>
+                    
+                                        <h3 class="is-size-4" style="margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ vaccine.vaccinename }}</h3>
+                                        <p class="is-size-7" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ vaccine.companyname }}</p>
+                                        <div class="menu-label">Progress</div>
+                                        <progress class="progress is-success" :value="vaccine.phase" max="7">15%</progress>
+                                        <div class="menu-label">Phase</div>
+                                        <p class="is-size-5">{{ phases[vaccine.phase] }}</p>
+   
+                                    </div>
+                                    <div class="card-footer2">
+                                        <a class="card-footer-item2" @click="selected = vaccine.vaccinename">More Information</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+   
+                    </b-tab-item>
+                </b-tabs>
+   
+            </div>
+   
+            <div v-for="vaccine in statusData" class="card2" v-if="selected == vaccine.vaccinename">
+                <div class="card-content2">
+   
+                    <h1 class="is-size-4">{{ vaccine.vaccinename }}</h1>
+                    <div v-if="company in companies" class="is-size-6" v-for="company in vaccine.companyname.split(',')">
+                        <p>
+                            <img style="border-radius:16px;" :src="'https://www.countryflags.io/' + companies[company].companycountrycode + '/flat/48.png'" style="vertical-align: middle">
+                            <a target="_blank" :href="companies[company].companylink">{{ company }} ({{ companies[company].companycountry }})</a>
+                        </p>
+                    </div>
+   
+                    <h3 class="menu-label">Progress</h3>
+                    <progress class="progress is-success" :value="vaccine.phase" max="7">15%</progress>
+   
+                    <div class="columns">
+                        <div class="column">
+                            <p>Pre-clinical research</p>
+                        </div>
+                        <div class="column">
+                            <p>Pre-clinical Trials</p>
+                        </div>
+                        <div class="column">
+                            <p><a v-if="vaccine.phase1link" :href="vaccine.phase1link" target="_blank">Phase 1 trial</a></p>
+                            <p v-if="!vaccine.phase1link">Phase 1 trial</p>
+                            <p>Start: {{ vaccine.p1start }}</p>
+                            <p>End: {{ vaccine.p1end }}</p>
+                        </div>
+                        <div class="column">
+                            <p><a v-if="vaccine.phase2link" :href="vaccine.phase2link" target="_blank">Phase 2 trial</a></p>
+                            <p v-if="!vaccine.phase2link">Phase 2 trial</p>
+                            <p>Start: {{ vaccine.p2start }}</p>
+                            <p>End: {{ vaccine.p2end }}</p>
+                        </div>
+                        <div class="column">
+                            <p><a v-if="vaccine.phase3link" :href="vaccine.phase3link" target="_blank">Phase 3 trial</a></p>
+                            <p v-if="!vaccine.phase3link">Phase 3 trial</p>
+                            <p>Start: {{ vaccine.p2start }}</p>
+                            <p>End: {{ vaccine.p2end }}</p>
+                        </div>
+                        <div class="column">
+                            <p>FDA Approved</p>
+                        </div>
+                        <div class="column">
+                            <p>Generally Available</p>
+                        </div>
+                    </div>
+   
+                    <div class="columns">
+                        <div class="column">
+                            <h3 class="menu-label">Phase</h3>
+                            <p class="is-size-3">{{ phases[vaccine.phase] }}</p>
+                        </div>
+                        <div class="column">
+                            <h3 class="menu-label">Type</h3>
+                            <p class="is-size-3">{{ vaccine.vaccinetype }}</p>
+                        </div>
+                        <div class="column">
+                            <h3 class="menu-label">Candidates Enrolled</h3>
+                            <p class="is-size-3">{{ vaccine.currentlyenrolled }}</p>
+                        </div>                        
+                    </div>
+   
+                    <h3 class="menu-label">Description</h3>
+                    <p>{{ vaccine.details }}</p>
+                    <h3 class="menu-label">Status</h3>
+                    <p>{{ vaccine.status }}</p>
+   
+                    <h3 v-if="vaccine.articles" class="menu-label">More Information</h3>
+                    <a v-if="vaccine.articles" v-for="article in vaccine.articles.split('\n')" :href="article">{{ article }}</a>
+                </div>
+            </div>
+           
+                    
+                </div>
+            </div>
+        </div>
+   
+    </div>  
+   
+    </div>
+    <script>
+        let sheetID = "1SPJkhl7hSAnsSmd1GfZowgYXD55oM2_38yyHZ7g_74Q";
+   
+        async function gsx(id, sheet) {
+            url = 'https://spreadsheets.google.com/feeds/list/' + id + '/' + sheet + '/public/values?alt=json';
+   
+            response = await fetch(url);
+   
+            if( response.status != 200) {
+                return;
+            }
+   
+            var data = await response.json();
+            var responseObj = {};
+            var rows = [];
+            var columns = {};
+   
+            for (var i = 0; i < data.feed.entry.length; i++) {
+                var entry = data.feed.entry[i];
+                var keys = Object.keys(entry);
+                var newRow = {};
+                var queried = false;
+                for (var j = 0; j < keys.length; j++) {
+                    var gsxCheck = keys[j].indexOf('gsx$');
+                    if (gsxCheck > -1) {
+                    var key = keys[j];
+                    var name = key.substring(4);
+                    var content = entry[key];
+                    var value = content.$t;
+                    newRow[name] = value;
+                    if (!columns.hasOwnProperty(name)) {
+                        columns[name] = [];
+                        columns[name].push(value);
+                    } else {
+                        columns[name].push(value);
+                    }
+                    }
+                }
+                rows.push(newRow);
+                }
+            return rows;
+        }
+   
+        async function getData() {
+            return await gsx(sheetID, 1);
+        }
+   
+        async function getCompanies() {
+            let companies = await gsx(sheetID, 3);
+            companyDict = {};
+            companies.forEach(company => {
+                companyDict[company.companyname] = company;
+            })
+            return companyDict;
+        }        
+   
+        new Vue({
+            el: '#app',
+            data: {
+                vaccinationsByPhase: {},
+                companies: {},
+                companiesByPhase: [],
+                news: [],
+                phases: {
+                    8: "All Vaccines",
+                    7: "Generally Available",
+                    6: "FDA Approved",
+                    5: "Phase 3 trial",
+                    4: "Phase 2 trial",
+                    3: "Phase 1 trial",
+                    2: "Pre-clinical trials",
+                    1: "Pre-clinical research",
+                },
+                phaseOrder: [8,7,6,5,4,3,2,1],
+                phaseOrderSidebar: [7,6,5,4,3,2,1],
+                selected: null,
+                statusData: []
+            },
+            async mounted() {
+   
+                this.statusData = await getData();
+                this.companies = await getCompanies();
+                let phases = Object.keys(this.phases);
+                let vaccinationsByPhase = {}
+   
+                phases.forEach(phase => {
+                    if (phase == 8) {
+                        vaccinationsByPhase[phase] = this.statusData;
+                    } else {
+                        vaccinationsByPhase[phase] = this.statusData.filter(x => x.phase == phase);
+   
+                    }
+                })
+                this.vaccinationsByPhase = vaccinationsByPhase;
+            },
+            watch: {
+                async selected() {
+                    let query = this.selected;
+                    
+                    this.news = (await res.json())['articles'];
+   
+                }
+            }
+        })
+    </script>
+   
+   
+   
+   
+   
+      <!--  container -->
+      <footer>
+         <a href="http://www.covidmarkets.com/" style="font-size: large;">Covid Markets</a>
+         <div class="share text-center">
+            <a class="btn third-font" style="margin: 0 auto;width: auto;height: auto;color: rgb(255, 255, 255); font-size: 1rem; font-weight: lighter; margin-bottom: -14px;">
+               <center>Share</center>
+            </a>
+            <ul class="mt-3 mb-0">
+               <li>
+                  <a href="https://www.facebook.com/sharer.php?u={url}" target="_blank" title="Facebook">
+                     <svg id="icon-facebook" viewbox="0 0 112.196 112.196">
+                        <circle cx="56.098" cy="56.098" fill="#3b5998" r="56.098"></circle>
+                        <path d="M70.201 58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34c0-5.964 2.833-15.303 15.301-15.303l11.234.047v12.51h-8.151c-1.337.0-3.217.668-3.217 3.513v7.585h11.334l-1.325 12.876z" fill="#fff"></path>
+                     </svg>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://twitter.com/intent/tweet?url={url}&text={title}" target="_blank" title="Twitter">
+                     <svg id="icon-twitter" viewbox="0 0 112.197 112.197">
+                        <circle cx="56.099" cy="56.098" fill="#1da1f2" r="56.098"></circle>
+                        <path d="M90.461 40.316a26.753 26.753.0 0 1-7.702 2.109 13.445 13.445.0 0 0 5.897-7.417 26.843 26.843.0 0 1-8.515 3.253 13.396 13.396.0 0 0-9.79-4.233c-7.404.0-13.409 6.005-13.409 13.409.0 1.051.119 2.074.349 3.056-11.144-.559-21.025-5.897-27.639-14.012a13.351 13.351.0 0 0-1.816 6.742c0 4.651 2.369 8.757 5.965 11.161a13.314 13.314.0 0 1-6.073-1.679l-.001.17c0 6.497 4.624 11.916 10.757 13.147a13.362 13.362.0 0 1-3.532.471c-.866.0-1.705-.083-2.523-.239 1.706 5.326 6.657 9.203 12.526 9.312a26.904 26.904.0 0 1-16.655 5.74c-1.08.0-2.15-.063-3.197-.188a37.929 37.929.0 0 0 20.553 6.025c24.664.0 38.152-20.432 38.152-38.153.0-.581-.013-1.16-.039-1.734a27.192 27.192.0 0 0 6.692-6.94z" fill="#fff"></path>
+                     </svg>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://t.me/share/url?url={url}&text={title}" target="_blank" title="Telegram">
+                     <svg id="icon-telegram" viewbox="0 0 512 512">
+                        <circle cx="256" cy="256" fill="#08c" r="256"></circle>
+                        <path d="M221.138 293.3l115.691 87.347 58.399-249.287L96.771 248.759l90.817 30.081 165.743-111.176z" fill="#fff"></path>
+                        <path d="M187.588 278.84l24.873 89.504 8.677-75.044 132.193-125.636z" fill="#d2d2d7"></path>
+                        <path d="M258.738 321.688l-46.277 46.656 8.677-75.044z" fill="#b9b9be"></path>
+                     </svg>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://www.reddit.com/submit?url={url}&title={title}" target="_blank" title="Reddit">
+                     <svg id="icon-reddit" viewbox="0 0 20 20">
+                        <circle cx="10" cy="10" fill="#ff4500" r="10"></circle>
+                        <path d="M16.67 10a1.46 1.46.0 0 0-2.47-1 7.12 7.12.0 0 0-3.85-1.23L11 4.65l2.14.45a1 1 0 1 0 .13-.61L10.82 4a.31.31.0 0 0-.37.24l-.74 3.47a7.14 7.14.0 0 0-3.9 1.23 1.46 1.46.0 1 0-1.61 2.39 2.87 2.87.0 0 0 0 .44c0 2.24 2.61 4.06 5.83 4.06s5.83-1.82 5.83-4.06a2.87 2.87.0 0 0 0-.44 1.46 1.46.0 0 0 .81-1.33zm-10 1a1 1 0 1 1 1 1 1 1 0 0 1-1-1zm5.81 2.75a3.84 3.84.0 0 1-2.47.77 3.84 3.84.0 0 1-2.47-.77.27.27.0 0 1 .38-.38A3.27 3.27.0 0 0 10 14a3.28 3.28.0 0 0 2.09-.61.27.27.0 1 1 .39.4zm-.18-1.71a1 1 0 1 1 1-1 1 1 0 0 1-1.01 1.04z" fill="#fff"></path>
+                     </svg>
+                  </a>
+               </li>
+               <li>
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}" target="_blank" title="Linkedin">
+                     <svg id="icon-linkedin" viewbox="0 0 112.196 112.196">
+                        <circle cx="56.098" cy="56.097" fill="#0077b5" r="56.098"></circle>
+                        <path d="M89.616 60.611v23.128H76.207V62.161c0-5.418-1.936-9.118-6.791-9.118-3.705.0-5.906 2.491-6.878 4.903-.353.862-.444 2.059-.444 3.268v22.524h-13.41s.18-36.546.0-40.329h13.411v5.715c-.027.045-.065.089-.089.132h.089v-.132c1.782-2.742 4.96-6.662 12.085-6.662 8.822.0 15.436 5.764 15.436 18.149zm-54.96-36.642c-4.587.0-7.588 3.011-7.588 6.967.0 3.872 2.914 6.97 7.412 6.97h.087c4.677.0 7.585-3.098 7.585-6.97-.089-3.956-2.908-6.967-7.496-6.967zm-6.791 59.77H41.27v-40.33H27.865v40.33z" fill="#fff"></path>
+                     </svg>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </footer>
+      <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+           var $slider = $('#slider');
+           if($slider.length) {
+             var currentSlide;
+             var slidesCount;
+             var sliderCounter = document.createElement('div');
+             sliderCounter.classList.add('slider__counter');
+             var updateSliderCounter = function(slick, currentIndex) {
+               currentSlide = slick.slickCurrentSlide() + 1;
+               slidesCount = slick.slideCount;
+               $(sliderCounter).text(currentSlide)
+             };
+             $slider.on('init', function(event, slick) {
+               $slider.append(sliderCounter);
+               updateSliderCounter(slick);
+             });
+             $slider.on('afterChange', function(event, slick, currentSlide) {
+               updateSliderCounter(slick, currentSlide);
+             });
+             $slider.slick({
+               centerMode: true,
+               centerPadding: '0px',
+               slidesToShow: 4,
+               arrows: true,
+               responsive: [{
+                 breakpoint: 800,
+                 settings: {
+                   arrows: false,
+                   centerMode: true,
+                   slidesToShow: 4
+                 }
+               }, {
+                 breakpoint: 556,
+                 settings: {
+                   arrows: true,
+                   centerMode: true,
+                   centerPadding: '0px',
+                   slidesToShow: 1,
+                   prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+                   nextArrow: "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>"
+                 }
+               }]
+             });
+           }
+           // $('#slider').slick({
+           //   centerMode: true,
+           //   centerPadding: '0px',
+           //   slidesToShow: 4,
+           //   responsive: [
+           //     {
+           //       breakpoint: 768,
+           //       settings: {
+           //         arrows: false,
+           //         centerMode: true,
+           //         centerPadding: '40px',
+           //         slidesToShow: 3
+           //       }
+           //     },
+           //     {
+           //       breakpoint: 480,
+           //       settings: {
+           //         arrows: false,
+           //         centerMode: true,
+           //         centerPadding: '10px',
+           //         slidesToShow: 1
+           //       }
+           //     }
+           //   ]
+           // });
+         });
+      </script>
+      <script type="text/javascript">
+      $(document).ready(function() {
+         $(".progress-cir").each(function(){
+   
+            var $bar = $(this).find(".bar");
+            var $val = $(this).find("span");
+            var perc = parseInt( $val.text(), 10);
+         
+            $({p:0}).animate({p:perc}, {
+            duration: 3000,
+            easing: "swing",
+            step: function(p) {
+               $bar.css({
+                  transform: "rotate("+ (45+(p*1.8)) +"deg)", // 100%=180° so: ° = % * 1.8
+                  // 45 is to add the needed rotation to have the green borders at the bottom
+               });
+               $val.text(p|0);
+            }
+            });
+         });
+      });
+      </script>
+      <script src="indexshare.js"></script>
+   </body>
+   </html>
