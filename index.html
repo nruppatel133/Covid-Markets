@@ -1,0 +1,705 @@
+<html lang="en">
+
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166789725-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166789725-1');
+</script>
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta content="public" http-equiv="Cache-Control">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Covid Markets Dashboard</title>
+    <meta content="Live Covid-19 Tracker. See Reopening dates, Latest News, Vaccine Tracker, Treatments Source, and learn about prevention measures." name="description" />
+    <meta content="covid-19, tracker, covid 19 tracker, covid 19 tracker for ontario, covid 19 tracker canada, covid 19 tracker usa, covid 19 tracker world, covid 19 tracker india, covid 19 tracker live, covid 19 tracker app, covid 19 tracker by state, covid 19 tracker by zip code, covid 19 tracker dashboard, covid 19 blood clots, covid 19 early symptoms, vaccine coronavirus, vaccine covid 19, vaccine news, vaccine covid, reopening the economy, reopening canada, reopening california, reopen america, travel advisory, travel restrictions, coronavirus vaccine, coronavirus vaccine tracker, coronavirus news, covid-19 news, covid-19 treatments, covid, coronavirus tracker, coronavirus news, coronavirus reopening, coronavirus vaccine" name="keywords" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://covidmarkets.com/">
+    <meta property="og:title" content="Covid Markets: Vaccine Tracker, Reopening Dates, and more.">
+    <meta property="og:description" content="Live Covid-19 Tracker. See Reopening dates, Latest News, Vaccine Tracker, Treatments Source, and learn about prevention measures.">
+    <meta property="og:image" content="https://www.covidmarkets.com/images/facebook.png">
+	<meta name="twitter:title" content="Covid Markets: Vaccine Tracker, Reopening Dates, and more.">
+	<meta name="twitter:description" content="Live Covid-19 Tracker. See Reopening dates, Latest News, Vaccine Tracker, Treatments Source, and learn about prevention measures.">
+    <meta name="twitter:creator" content="@NrupPatel13">
+    <meta name="twitter:image" content="https://www.covidmarkets.com/images/card.png">
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@Nruppatel13">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="images/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="images/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="&nbsp;"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="images/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="images/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="images/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="images/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="images/mstile-310x310.png" />
+  <link rel="canonical" href="https://covidmarkets.com/index.html">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+        <!--Morris Chart-->
+        <link rel="stylesheet" href="dist/assets/libs/morris-js/morris.css" />
+
+        <!-- Sweet Alert css -->
+        <link href="dist/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="dist/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="dist/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="dist/assets/css/jquery.autocomplete.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script>
+          $(document).on('click',function(){
+          $('.collapse').collapse('hide');
+          })
+          </script> 
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <a class="navbar-brand" href="index.html">Covid Markets <img style="background-color: transparent; width: 28px; height: 28px; margin-bottom: 3px;" src="https://img.icons8.com/emoji/48/000000/microbe.png"/></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>  
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <button class="btn nav-link" id="research" onclick="location.href='../research.html'">
+              <span class="m-icon"><img style="background-color: transparent; width: 28px; height: 28px;"src="https://img.icons8.com/emoji/48/000000/syringe-emoji.png"/></span>
+                 Vaccine Progress
+              </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn nav-link" id="research" onclick="location.href='../reopen.html'">
+              <span class="m-icon"><img  style="background-color: transparent; width: 28px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/locked-with-key.png"/></span>
+                 Reopening 
+              </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn nav-link" id="research" onclick="location.href='../app.html'">
+              <span class="m-icon"><img style="background-color: transparent; width: 28px; height: 28px; margin-top: 2px;" src="https://img.icons8.com/emoji/48/000000/airplane-emoji.png"/></span>
+                 Travel
+              </button>
+          </li>    
+          <li class="nav-item">
+            <button class="btn nav-link" id="data" onclick="location.href='../data.html'">
+              <span class="m-icon"><img  style="background-color: transparent; width: 28px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/crossed-fingers-emoji.png"/></span>
+                 Outcome
+              </button>
+          </li> 
+          <li class="nav-item">
+         <button class="btn nav-link" id="map" onclick="location.href='../map.html'">
+          <span class="m-icon"><img style="background-color: transparent; width: 32px; height: 32px;" src="https://img.icons8.com/emoji/48/000000/globe-showing-americas-emoji.png"/></span>
+               Map
+            </button>
+          </li>    
+          <li class="nav-item">
+            <button class="btn nav-link" id="research" onclick="location.href='../beforeafter.html'">
+              <span class="m-icon"><img  style="background-color: transparent; width: 28px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/information-emoji.png"/></span>
+               Wiki
+            </button>
+          </li>    
+          <li class="nav-item">
+            <button class="btn nav-link" id="research" onclick="location.href='../about.html'">
+              <span class="m-icon"><img  style="background-color: transparent; width: 26px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/blue-book.png"/></span>
+               About
+            </button>
+          </li>    
+        </ul>
+      </div>  
+    </nav>
+  
+<script>
+$('.alert').click(function() {
+  $(this).fadeOut();
+});
+</script>
+
+<section style="background-color: white;">
+  <div>
+    <header>
+      <div class="main-font">
+       
+        <h1 class="second-font">
+          Tracking Coronavirus
+        </h1>
+        <center><div style="color: black; font-size: 12px; font-weight: lighter;">Last updated: <script>
+    
+          var mydate=new Date()
+          var year=mydate.getYear()
+          if (year < 1000)
+          year+=1900
+          var day=mydate.getDay()
+          var month=mydate.getMonth()
+          var daym=mydate.getDate()
+          if (daym<10)
+          daym="0"+daym
+          var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+          var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+          document.write("<div><font color='000000' fontWeight='lighter' font-size='8px'><b>"+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"</b></font></div>")
+          
+          </script> </div> </center>
+      </div>
+      <center><div class="alert alert-info" style="text-align: center; margin-bottom: 15px;">Testing and Population Data Available!
+      </div> </center>
+      <div class="text-center py-2 pb-0"> 
+        <a class="btn btn-default btn-round m-0" style="color: black; font-size: 1.1rem;  padding: 11px 13px 10px 15px;color: #111213; border-radius: 20px 20px 20px 20px;">
+        <center>World <img style="background-color: transparent; width: 30px; height: 30px; margin-bottom: 3px;" src="https://img.icons8.com/emoji/48/000000/globe-showing-americas-emoji.png"/>
+        </center>
+      </a></div>
+        
+
+      <!--World Info-->
+      <div class="customContainer" id="home">
+        
+          <div class="row">
+              <div class="col s12 m3">
+                  <div class="card center-align hoverable">           
+                      <div class="card-content"> 
+                          <h6 class="diffrent">Cases</h6>
+                          <h3 class="blue-text count" id="total_cases_World"> <center><div class="loader"></div></center></h3>
+                          <small style="font-size: 10px;">% of World Population</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="col s12 m3">
+                  <div class="card center-align hoverable">           
+                      <div class="card-content"> 
+                          <h6 class="diffrent" >Deaths</h6>
+                          <h3 class="red-text count mb-0" id="total_deaths_World"><center><div class="loader2"></div></center></h3>
+                          <small style="font-size: 10px;">% of Total Cases</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="col s12 m3">
+                <div class="card center-align hoverable">           
+                    <div class="card-content"> 
+                        <h6 class="diffrent">Today Cases</h6>
+                        <h3 class="green-text count mb-0" id="today_cases_World"><center><div class="loader"></div></center></h3>
+                        <small style="font-size: 10px;">% of Total Cases</small>
+                      </div>
+                </div>
+            </div>
+            
+              <div class="col s12 m3">
+                  <div class="card center-align hoverable">           
+                      <div class="card-content"> 
+                          <h6 class="diffrent">Today Deaths</h6>
+                          <h3 class="cyan-text count mb-0" id="today_deaths_World"><center><div class="loader2"></div></center></h3>
+                          <small style="font-size: 10px;">% of Total Deaths</small>
+                        </div>
+                  </div>
+              </div>
+              <div class="col s12 m3">
+                <div class="card center-align hoverable">           
+                    <div class="card-content"> 
+                        <h6 class="diffrent">Recovered</h6>
+                        <h3 class="green-text count mb-0" id="total_recovary_World"><center><div class="loader"></div></center></h3>
+                        <small style="font-size: 10px;">% of Confirmed Cases</small>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <hr>
+
+
+          <div class="text-center"><a class="btn btn-default btn-round third-font" style="color: black; font-size: 1.1rem; padding: 10px 10px 10px 15px;color: #111213; border-radius: 20px 20px 20px 20px;">
+            <center>Country
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 192 199" style=" fill:#000000;">
+                <defs>
+                  <linearGradient x1="101.536" y1="91.32407" x2="91.4008" y2="101.45927" gradientUnits="userSpaceOnUse" id="color-1_p3miLroKw4iR_gr1">
+                    <stop offset="0" stop-color="#7b7d80"></stop>
+                    <stop offset="0.002" stop-color="#7d7f82"></stop>
+                    <stop offset="0.04" stop-color="#a9abad"></stop>
+                    <stop offset="0.077" stop-color="#cccdce"></stop>
+                    <stop offset="0.112" stop-color="#e5e5e6"></stop>
+                    <stop offset="0.144" stop-color="#f4f4f4"></stop>
+                    <stop offset="0.17" stop-color="#f9f9f9"></stop>
+                    <stop offset="0.372" stop-color="#f7f7f7"></stop>
+                    <stop offset="0.444" stop-color="#f0f0f0"></stop>
+                    <stop offset="0.496" stop-color="#e5e5e5"></stop>
+                    <stop offset="0.538" stop-color="#d4d4d4"></stop>
+                    <stop offset="0.574" stop-color="#bebebe"></stop>
+                    <stop offset="0.606" stop-color="#a2a2a3"></stop>
+                    <stop offset="0.634" stop-color="#828283"></stop>
+                    <stop offset="0.661" stop-color="#5c5c5d"></stop>
+                    <stop offset="0.684" stop-color="#333334"></stop>
+                    <stop offset="0.696" stop-color="#1b1b1c"></stop>
+                    <stop offset="0.703" stop-color="#272728"></stop>
+                    <stop offset="0.728" stop-color="#4a4a4a"></stop>
+                    <stop offset="0.755" stop-color="#686869"></stop>
+                    <stop offset="0.784" stop-color="#818181"></stop>
+                    <stop offset="0.817" stop-color="#949494"></stop>
+                    <stop offset="0.855" stop-color="#a1a1a1"></stop>
+                    <stop offset="0.904" stop-color="#a9a9a9"></stop>
+                    <stop offset="1" stop-color="#ababab"></stop>
+                  </linearGradient>
+                  <linearGradient x1="-428.75492" y1="347.73222" x2="-519.97169" y2="438.949" gradientUnits="userSpaceOnUse" id="color-2_p3miLroKw4iR_gr2">
+                    <stop offset="0" stop-color="#7b7d80"></stop>
+                    <stop offset="0.002" stop-color="#7d7f82"></stop>
+                    <stop offset="0.04" stop-color="#a9abad"></stop>
+                    <stop offset="0.077" stop-color="#cccdce"></stop>
+                    <stop offset="0.112" stop-color="#e5e5e6"></stop>
+                    <stop offset="0.144" stop-color="#f4f4f4"></stop>
+                    <stop offset="0.17" stop-color="#f9f9f9"></stop>
+                    <stop offset="0.372" stop-color="#f7f7f7"></stop>
+                    <stop offset="0.444" stop-color="#f0f0f0"></stop>
+                    <stop offset="0.496" stop-color="#e5e5e5"></stop>
+                    <stop offset="0.538" stop-color="#d4d4d4"></stop>
+                    <stop offset="0.574" stop-color="#bebebe"></stop>
+                    <stop offset="0.606" stop-color="#a2a2a3"></stop>
+                    <stop offset="0.634" stop-color="#828283"></stop>
+                    <stop offset="0.661" stop-color="#5c5c5d"></stop>
+                    <stop offset="0.684" stop-color="#333334"></stop>
+                    <stop offset="0.696" stop-color="#1b1b1c"></stop>
+                    <stop offset="0.703" stop-color="#272728"></stop>
+                    <stop offset="0.728" stop-color="#4a4a4a"></stop>
+                    <stop offset="0.755" stop-color="#686869"></stop>
+                    <stop offset="0.784" stop-color="#818181"></stop>
+                    <stop offset="0.817" stop-color="#949494"></stop>
+                    <stop offset="0.855" stop-color="#a1a1a1"></stop>
+                    <stop offset="0.904" stop-color="#a9a9a9"></stop>
+                    <stop offset="1" stop-color="#ababab"></stop>
+                  </linearGradient>
+                  <linearGradient x1="139.20715" y1="123.93627" x2="124.00435" y2="139.13906" gradientUnits="userSpaceOnUse" id="color-3_p3miLroKw4iR_gr3">
+                    <stop offset="0" stop-color="#54321d"></stop>
+                    <stop offset="0.02" stop-color="#693f24"></stop>
+                    <stop offset="0.064" stop-color="#915731"></stop>
+                    <stop offset="0.107" stop-color="#b16b3c"></stop>
+                    <stop offset="0.149" stop-color="#c87944"></stop>
+                    <stop offset="0.189" stop-color="#d58148"></stop>
+                    <stop offset="0.223" stop-color="#da844a"></stop>
+                    <stop offset="0.398" stop-color="#b6683a"></stop>
+                    <stop offset="0.706" stop-color="#7a391f"></stop>
+                    <stop offset="0.85" stop-color="#69341f"></stop>
+                    <stop offset="1" stop-color="#5c311f"></stop>
+                  </linearGradient>
+                  <radialGradient cx="60.98833" cy="60.91667" r="43" gradientUnits="userSpaceOnUse" id="color-4_p3miLroKw4iR_gr4">
+                    <stop offset="0" stop-color="#fafafa"></stop>
+                    <stop offset="0.348" stop-color="#f7f7f7"></stop>
+                    <stop offset="0.562" stop-color="#efefef"></stop>
+                    <stop offset="0.74" stop-color="#e1e1e1"></stop>
+                    <stop offset="0.896" stop-color="#cccccc"></stop>
+                    <stop offset="1" stop-color="#bababa"></stop>
+                  </radialGradient>
+                  <linearGradient x1="28.05033" y1="93.85467" x2="93.92633" y2="27.97867" gradientUnits="userSpaceOnUse" id="color-5_p3miLroKw4iR_gr5">
+                    <stop offset="0" stop-color="#6b6b6b"></stop>
+                    <stop offset="0.164" stop-color="#6d6d6d"></stop>
+                    <stop offset="0.244" stop-color="#757575"></stop>
+                    <stop offset="0.306" stop-color="#828282"></stop>
+                    <stop offset="0.358" stop-color="#959595"></stop>
+                    <stop offset="0.405" stop-color="#adadad"></stop>
+                    <stop offset="0.447" stop-color="#cacaca"></stop>
+                    <stop offset="0.486" stop-color="#ededed"></stop>
+                    <stop offset="0.498" stop-color="#fafafa"></stop>
+                    <stop offset="0.506" stop-color="#f0f0f0"></stop>
+                    <stop offset="0.536" stop-color="#d1d1d1"></stop>
+                    <stop offset="0.57" stop-color="#b5b5b5"></stop>
+                    <stop offset="0.609" stop-color="#9f9f9f"></stop>
+                    <stop offset="0.653" stop-color="#8f8f8f"></stop>
+                    <stop offset="0.709" stop-color="#838383"></stop>
+                    <stop offset="0.786" stop-color="#7c7c7c"></stop>
+                    <stop offset="1" stop-color="#7a7a7a"></stop>
+                  </linearGradient>
+                  <radialGradient cx="60.98833" cy="60.91667" r="43" gradientUnits="userSpaceOnUse" id="color-6_p3miLroKw4iR_gr6">
+                    <stop offset="0" stop-color="#fafafa" stop-opacity="0"></stop>
+                    <stop offset="0.271" stop-color="#f8f8f8" stop-opacity="0.019"></stop>
+                    <stop offset="0.437" stop-color="#f1f1f1" stop-opacity="0.08"></stop>
+                    <stop offset="0.575" stop-color="#e5e5e5" stop-opacity="0.185"></stop>
+                    <stop offset="0.697" stop-color="#d5d5d5" stop-opacity="0.333"></stop>
+                    <stop offset="0.81" stop-color="#bfbfbf" stop-opacity="0.525"></stop>
+                    <stop offset="0.913" stop-color="#a5a5a5" stop-opacity="0.757"></stop>
+                    <stop offset="1" stop-color="#8a8a8a"></stop>
+                  </radialGradient>
+                  <radialGradient cx="61.11566" cy="24.45267" r="73.04161" gradientUnits="userSpaceOnUse" id="color-7_p3miLroKw4iR_gr7">
+                    <stop offset="0" stop-color="#ffffff"></stop>
+                    <stop offset="0.068" stop-color="#ffffff" stop-opacity="0.838"></stop>
+                    <stop offset="0.162" stop-color="#ffffff" stop-opacity="0.644"></stop>
+                    <stop offset="0.261" stop-color="#ffffff" stop-opacity="0.471"></stop>
+                    <stop offset="0.363" stop-color="#ffffff" stop-opacity="0.326"></stop>
+                    <stop offset="0.468" stop-color="#ffffff" stop-opacity="0.207"></stop>
+                    <stop offset="0.579" stop-color="#ffffff" stop-opacity="0.116"></stop>
+                    <stop offset="0.697" stop-color="#ffffff" stop-opacity="0.051"></stop>
+                    <stop offset="0.827" stop-color="#ffffff" stop-opacity="0.012"></stop>
+                    <stop offset="0.995" stop-color="#ffffff" stop-opacity="0"></stop>
+                  </radialGradient>
+                  <linearGradient x1="156.61562" y1="156.54753" x2="106.59588" y2="106.5278" gradientUnits="userSpaceOnUse" id="color-8_p3miLroKw4iR_gr8">
+                    <stop offset="0" stop-color="#522c1b"></stop>
+                    <stop offset="0.022" stop-color="#582f1d" stop-opacity="0.802"></stop>
+                    <stop offset="0.076" stop-color="#643621" stop-opacity="0.366"></stop>
+                    <stop offset="0.12" stop-color="#6b3a23" stop-opacity="0.098"></stop>
+                    <stop offset="0.148" stop-color="#6e3b24" stop-opacity="0"></stop>
+                  </linearGradient>
+                </defs>
+                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                  <path d="M0,172v-172h172v172z" fill="none"></path>
+                  <g>
+                    <g>
+                      <rect x="-2.01514" y="-41.05749" transform="rotate(135) scale(3.58333,3.58333)" width="4" height="6" fill="url(#color-1_p3miLroKw4iR_gr1)"></rect>
+                      <rect x="-3.01414" y="-42.05362" transform="rotate(135) scale(3.58333,3.58333)" width="6" height="2" fill="url(#color-2_p3miLroKw4iR_gr2)"></rect>
+                      <path d="M159.15002,154.01433l-5.0676,5.0676c-2.79876,2.79876 -7.33644,2.79876 -10.1352,0l-44.95467,-44.95467v0l15.2028,-15.2028v0l44.95467,44.95467c2.79876,2.79876 2.79876,7.33644 0,10.1352z" fill="url(#color-3_p3miLroKw4iR_gr3)"></path>
+                      <circle cx="17.02" cy="17" transform="scale(3.58333,3.58333)" r="12" fill="url(#color-4_p3miLroKw4iR_gr4)"></circle>
+                      <path d="M60.98833,14.33333c25.72726,0 46.58333,20.85607 46.58333,46.58333c0,25.72726 -20.85607,46.58333 -46.58333,46.58333c-25.72726,0 -46.58333,-20.85607 -46.58333,-46.58333c0,-25.72726 20.85607,-46.58333 46.58333,-46.58333zM17.98833,60.91667c0,23.74824 19.25176,43 43,43c23.74824,0 43,-19.25176 43,-43c0,-23.74824 -19.25176,-43 -43,-43c-23.74824,0 -43,19.25176 -43,43z" fill="url(#color-5_p3miLroKw4iR_gr5)"></path>
+                      <circle cx="17.02" cy="17" transform="scale(3.58333,3.58333)" r="12" fill="url(#color-6_p3miLroKw4iR_gr6)"></circle>
+                      <ellipse cx="17.02" cy="11.581" transform="scale(3.58333,3.58333)" rx="7" ry="4.419" fill="url(#color-7_p3miLroKw4iR_gr7)"></ellipse>
+                      <path d="M159.15002,154.01433l-5.0676,5.0676c-2.79876,2.79876 -7.33644,2.79876 -10.1352,0l-44.95467,-44.95467v0l15.2028,-15.2028v0l44.95467,44.95467c2.79876,2.79876 2.79876,7.33644 0,10.1352z" fill="url(#color-8_p3miLroKw4iR_gr8)"></path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </center>
+          </a></div>
+
+    <div class="container" style=" padding-top: 20px;" >
+      <div class="headLinks" style="padding-bottom: 10px;">
+        <a class="myLinks" href="javascript:void(0)"  onclick="showCountry('usa')">USA <img style="background-color: transparent; width: 25px; height: 25px; margin-bottom: 3px;" src="https://img.icons8.com/color/48/000000/usa.png"/></a>
+        <a class="myLinks"href="javascript:void(0)" onclick="showCountry('canada')">Canada <img style="background-color: transparent; width: 25px; height: 25px; margin-bottom: 3px;" src="https://img.icons8.com/color/48/000000/canada.png"/></a>
+        <a class="myLinks" href="javascript:void(0)" onclick="showCountry('uk')">United Knigdom <img style="background-color: transparent; width: 25px; height: 25px; margin-bottom: 3px;" src="https://img.icons8.com/color/48/000000/great-britain.png"/></a>
+        <a class="myLinks"  href="javascript:void(0)" onclick="showCountry('india')">India <img style="background-color: transparent; width: 25px; height: 25px; margin-bottom: 3px;" src="https://img.icons8.com/color/48/000000/india.png"/></a>
+        <a class="myLinks" href="javascript:void(0)" onclick="showCountry('russia')">Russia <img style="background-color: transparent; width: 25px; height: 25px; margin-bottom: 3px;" src="https://img.icons8.com/color/48/000000/russian-federation.png"/></a>
+        <a class="myLinks" href="javascript:void(0)" onclick="showCountry('brazil')">Brazil <img style="background-color: transparent; width: 25px; height: 25px; margin-bottom: 3px;" src="https://img.icons8.com/color/48/000000/brazil.png"/></a>
+        <a class="myLinks" href="javascript:void(0)" onclick="showCountry('mexico')">Mexico <img style="background-color: transparent; width: 25px; height: 25px; margin-bottom: 3px;" src="https://img.icons8.com/color/48/000000/mexico.png"/></a>
+        <a class="myLinks" href="javascript:void(0)" onclick="showCountry('france')">France <img style="background-color: transparent; width: 25px; height: 25px; margin-bottom: 3px;" src="https://img.icons8.com/color/48/000000/france.png"/></a>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="select-country">Selected Country</label>
+            </div>
+            <select class="custom-select" id="select-country" onchange="showCountry()">
+                <option selected>Loading...</option>
+            </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="input-group" style="padding-top: 5px;">
+          <div class="input-group-prepend">
+              <label class="input-group-text" for="select-province">State/Province</label>
+          </div>
+          <select class="custom-select" id="select-province"  onchange="showProvince()" >
+              <option selected>Loading...</option>
+          </select>
+      </div>
+      </div>
+    </div>
+
+
+        <div class="row">
+            <div class="col s12 m3">
+                <div class="card">
+                    <div class="card-content">
+                        <h5 class="diffrent" style="font-size: 1rem;">Cases</h5>
+                        <h3 class="blue-text" id="cases">-</h3>
+                        <small style="font-size: 10px;">% of Total Cases</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card">
+                    <div class="card-content">
+                        <h5 class="diffrent" style="font-size: 1rem;">Cases (Today)</h5>
+                        <h3 class="blue-text" id="cases-today">-</h3>
+                        <small style="font-size: 10px;">% of Cases (Country)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card">
+                    <div class="card-content">
+                        <h5 class="diffrent" style="font-size: 1rem;">Deaths</h5>
+                        <h3 class="" id="deaths">-</h3>
+                        <small style="font-size: 10px;">% of Total Cases</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="card">
+                    <div class="card-content text-red">
+                        <h5 class="diffrent" style="font-size: 1rem;">Deaths (Today)</h5>
+                        <h3 class="" id="deaths-today">-</h3>
+                        <small style="font-size: 10px;">% of Deaths (Country)</small>
+                    </div>
+                </div>
+            </div>
+           </div>
+
+            <div class="row mb-2" style="padding-left: 7px; padding-right: 7px; margin-top: 0px;">
+        <div class="col s12 m3">
+          <div class="card">
+              <div class="card-content">
+                  <h5 class="diffrent" style="font-size: 1rem;">Active</h5>
+                  <h3 class="" style="color: rgb(0, 142, 251);" id="active">-</h3>
+                  <small style="font-size: 10px;">% of Cases (Country)</small>
+              </div>
+          </div>
+      </div>
+      <div class="col s12 m3">
+          <div class="card">
+              <div class="card-content">
+                  <h5 class="diffrent" style="font-size: 1rem;">Recovered</h5>
+                  <h3 class="" id="recovered">-</h3>
+                  <small style="font-size: 10px;">% of Cases (Country)</small>
+              </div>
+          </div>
+      </div>
+      <div class="col s12 m3">
+          <div class="card">
+              <div class="card-content">
+                  <h5 class="diffrent" style="font-size: 1rem;">Critical</h5>
+                  <h3 class="" id="critical">-</h3>
+                  <small style="font-size: 10px;">% of Cases (Country)</small>
+              </div>
+          </div>
+      </div>
+      <div class="col s12 m3">
+        <div class="card">
+            <div class="card-content">
+                <h5 class="diffrent" style="font-size: 1rem;">Tests (National)</h5>
+                <h3 class="" style="color: rgb(219, 99, 149);" id="tests">-</h3>
+                <small style="font-size: 10px;">% of World Tests</small>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m3">
+      <div class="card">
+          <div class="card-content">
+              <h5 class="diffrent" style="font-size: 1rem;">Population (National)</h5>
+              <h3 class="" id="population">-</h3>
+              <small style="font-size: 10px;">% of World Population</small>
+          </div>
+      </div>
+  </div>
+  </div>
+<hr>
+<div class="text-center" style="padding-bottom: 20px;"><a class="btn btn-default btn-round third-font" style="color: black; font-size: 1.1rem; padding: 10px 10px 10px 15px;color: #111213; border-radius: 20px 20px 20px 20px;">
+  <center>Infographic Data <img style="background-color: transparent; width: 25px; height: 25px; margin-bottom: 3px;" src="https://img.icons8.com/color/48/000000/doughnut-chart--v1.png"/> 
+   
+  </center>
+</a></div>
+
+<div class="row">
+  <div class="col-md-6">
+      <div class="card" style=" padding: 1.5rem; margin-bottom: 24px; width: 100%; border-radius: 0.25rem; font-size: 20px;  display: inline-block; line-height: 1px;">
+
+          <h4 class="header-title mt-0" style="font-size: 20px;">Covid-19 Total </h4>
+
+          <div class="widget-chart text-center" style="fill:black">
+              <div id="morris-donut-global" style="height: 245px; fill:black" class="morris-chart" dir="ltr"></div>
+              <ul class="list-inline chart-detail-list mb-0" style="color: black; text-align:center; padding-top: 10px;">
+                  <li class="list-inline-item">
+                      <h5 style="color: #f9c851; font-size: 17px;"><i class="fa fa-circle mr-1"></i>Infected</h5>
+                  </li>
+                  <li class="list-inline-item">
+                      <h5 style="color: #10c469; font-size: 17px;"><i class="fa fa-circle mr-1"></i>Recovered</h5>
+                  </li>
+                  <li class="list-inline-item">
+                      <h5 style="color: #ff5b5b; font-size: 17px;"><i class="fa fa-circle mr-1"></i>Deaths</h5>
+                  </li>
+              </ul>
+              <h5 style="font-size: 15px; color: Black;">*Day End Data*</h5>
+          </div>
+      </div>
+  </div><!-- end col -->
+
+    <div class="col-md-6">
+        <div class="card" style=" padding: 1.5rem; width: 100%; margin-bottom: 24px; border-radius: 0.25rem; font-size: 20px;  display: inline-block; line-height: 1px;">
+  
+            <h4 class="header-title mt-0" style="font-size: 20px;">Covid-19 Fatality Rate by Sex</h4>
+  
+            <div class="widget-chart text-center" style="fill:black">
+                <div id="donut_chart" style="height: 245px; fill:black" class="morris-chart" dir="ltr"></div>
+                <ul class="list-inline chart-detail-list mb-0" style="color: black; text-align:center; padding-top: 17px; margin: -5px;">
+                    <li class="list-inline-item">
+                        <h5 style="color: rgb(0, 143, 251); font-size: 17px;"><i class="fa fa-circle mr-1"></i>Male</h5>
+                    </li>
+                    <li class="list-inline-item">
+                        <h5 style="color: rgb(219, 99, 149); font-size: 17px;"><i class="fas fa-circle mr-1"></i></i>Female</h5>
+                    </li>
+                    <li>
+                        
+                    </li>
+                </ul>
+                <h5 style="font-size: 15px; color: white;">Youre a cool person!</h5>
+            </div>
+        </div>
+    </div><!-- end col -->
+</div>
+<div class="row">
+    <div class="col-md-6">
+      <div class="card" style=" padding: 1.5rem; width: 100%; margin-bottom: 24px; border-radius: 0.25rem; font-size: 20px;  display: inline-block; line-height: 1px;">
+
+          <h4 class="header-title mt-0" style="font-size: 20px;" >Covid-19 Fatality Rate by Age</h4>
+
+          <div class="widget-chart text-center" style="fill:black">
+              <div id="donut" style="height: 245px; fill:black" class="morris-chart" dir="ltr"></div>
+              <ul class="list-inline chart-detail-list mb-0" style="color: black; text-align:center; padding-top: 10px;">
+                  <li class="list-inline-item">
+                      <h5 style="color: #F80000; font-size: 17px;"><i class="fa fa-circle mr-1"></i>80+</h5>
+                  </li>
+                  <li class="list-inline-item">
+                      <h5 style="color: #B80000; font-size: 17px;"><i class="fas fa-circle mr-1"></i></i>70+</h5>
+                  </li>
+                  <li class="list-inline-item">
+                    <h5 style="color: #900000; font-size: 17px;"><i class="fa fa-circle mr-1"></i>60+</h5>
+                </li>
+                <li class="list-inline-item">
+                    <h5 style="color: #780000; font-size: 17px;"><i class="fas fa-circle mr-1"></i></i>50+</h5>
+                </li>
+                <li class="list-inline-item">
+                  <h5 style="color: #600000; font-size: 17px;"><i class="fa fa-circle mr-1"></i>40+</h5>
+              </li>
+              <li class="list-inline-item">
+                  <h5 style="color: #480000; font-size: 17px;"><i class="fas fa-circle mr-1"></i></i>30+</h5>
+              </li>
+              <li class="list-inline-item">
+                <h5 style="color: #380000; font-size: 17px;"><i class="fa fa-circle mr-1"></i>20+</h5>
+            </li>
+            <li class="list-inline-item">
+                <h5 style="color: #100000; font-size: 17px;"><i class="fas fa-circle mr-1"></i></i>10+</h5>
+            </li>
+                 
+              </ul>
+            
+          </div>
+      </div>
+  </div><!-- end col -->
+  <div class="col-md-6">
+    <center>     <div class="card" style=" padding: 1.5rem; margin-bottom: 24px; border-radius: 0.25rem; font-size: 20px;  display: inline-block; line-height: 1px;">
+
+          <h4 class="header-title mt-0" style="font-size: 20px;">Covid-19 Fatality Rate by Comorbidity</h4>
+
+          <div class="widget-chart text-center" style="fill:black">
+              <div id="donutdie" style="height: 250px; fill:black" dir="ltr"></div>
+              <ul class="list-inline chart-detail-list mb-0" style="color: black; text-align:center">
+                  <li class="list-inline-item">
+                      <h5 style="color: #F80000; font-size: 15px;"><i class="fa fa-circle mr-1"></i>Cardiovascular disease</h5>
+                  </li>
+                  <li class="list-inline-item">
+                      <h5 style="color: #5c89c7; font-size: 15px;"><i class="fa fa-circle mr-1"></i>Diabetes</h5>
+                  </li>
+                  <li class="list-inline-item">
+                      <h5 style="color: #E27429; font-size: 15px;"><i class="fa fa-circle mr-1"></i>Chronic respiratory disease</h5>
+                  </li>
+                  <li class="list-inline-item">
+                    <h5 style="color: #D61A3C; font-size: 15px;"><i class="fa fa-circle mr-1"></i>Hypertension</h5>
+                </li>
+                <li class="list-inline-item">
+                  <h5 style="color: #967bb6; font-size: 15px;"><i class="fa fa-circle mr-1"></i>Cancer</h5>
+              </li>
+              <li class="list-inline-item">
+                <h5 style="color: #480000; font-size: 15px;"><i class="fa fa-circle mr-1"></i>No pre-existing conditions</h5>
+            </li>
+              </ul>
+            
+          </div>
+      </div> 
+  </div><!-- end col -->
+
+</div>
+
+
+</section>
+
+
+
+    <footer>
+      <a href="http://www.covidmarkets.com/" style="font-size: large;">Covid Markets</a>
+
+
+
+      <div class="share text-center">
+
+        <a class="btn third-font" style="margin: 0 auto;width: auto;height: auto;color: rgb(255, 255, 255); font-size: 1rem; font-weight: lighter; margin-bottom: -14px;">
+          <center>Share</center>
+                </a>
+          
+        <ul class="mt-3 mb-0">
+          <li>
+            <a href="https://www.facebook.com/sharer.php?u={url}" title="Facebook" target="_blank">
+              <svg id="icon-facebook" viewBox="0 0 112.196 112.196"><circle cx="56.098" cy="56.098" r="56.098" fill="#3b5998"></circle><path fill="#fff" d="M70.201 58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34c0-5.964 2.833-15.303 15.301-15.303l11.234.047v12.51h-8.151c-1.337.0-3.217.668-3.217 3.513v7.585h11.334l-1.325 12.876z"></path></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/intent/tweet?url={url}&text={title}" title="Twitter" target="_blank">
+              <svg id="icon-twitter" viewBox="0 0 112.197 112.197"><circle cx="56.099" cy="56.098" r="56.098" fill="#1da1f2"></circle><path fill="#fff" d="M90.461 40.316a26.753 26.753.0 0 1-7.702 2.109 13.445 13.445.0 0 0 5.897-7.417 26.843 26.843.0 0 1-8.515 3.253 13.396 13.396.0 0 0-9.79-4.233c-7.404.0-13.409 6.005-13.409 13.409.0 1.051.119 2.074.349 3.056-11.144-.559-21.025-5.897-27.639-14.012a13.351 13.351.0 0 0-1.816 6.742c0 4.651 2.369 8.757 5.965 11.161a13.314 13.314.0 0 1-6.073-1.679l-.001.17c0 6.497 4.624 11.916 10.757 13.147a13.362 13.362.0 0 1-3.532.471c-.866.0-1.705-.083-2.523-.239 1.706 5.326 6.657 9.203 12.526 9.312a26.904 26.904.0 0 1-16.655 5.74c-1.08.0-2.15-.063-3.197-.188a37.929 37.929.0 0 0 20.553 6.025c24.664.0 38.152-20.432 38.152-38.153.0-.581-.013-1.16-.039-1.734a27.192 27.192.0 0 0 6.692-6.94z"></path></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/share/url?url={url}&text={title}" title="Telegram" target="_blank">
+              <svg id="icon-telegram" viewBox="0 0 512 512"><circle cx="256" cy="256" r="256" fill="#08c"></circle><path fill="#fff" d="M221.138 293.3l115.691 87.347 58.399-249.287L96.771 248.759l90.817 30.081 165.743-111.176z"></path><path fill="#d2d2d7" d="M187.588 278.84l24.873 89.504 8.677-75.044 132.193-125.636z"></path><path fill="#b9b9be" d="M258.738 321.688l-46.277 46.656 8.677-75.044z"></path></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.reddit.com/submit?url={url}&title={title}" title="Reddit" target="_blank">
+              <svg id="icon-reddit" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#ff4500"></circle><path fill="#fff" d="M16.67 10a1.46 1.46.0 0 0-2.47-1 7.12 7.12.0 0 0-3.85-1.23L11 4.65l2.14.45a1 1 0 1 0 .13-.61L10.82 4a.31.31.0 0 0-.37.24l-.74 3.47a7.14 7.14.0 0 0-3.9 1.23 1.46 1.46.0 1 0-1.61 2.39 2.87 2.87.0 0 0 0 .44c0 2.24 2.61 4.06 5.83 4.06s5.83-1.82 5.83-4.06a2.87 2.87.0 0 0 0-.44 1.46 1.46.0 0 0 .81-1.33zm-10 1a1 1 0 1 1 1 1 1 1 0 0 1-1-1zm5.81 2.75a3.84 3.84.0 0 1-2.47.77 3.84 3.84.0 0 1-2.47-.77.27.27.0 0 1 .38-.38A3.27 3.27.0 0 0 10 14a3.28 3.28.0 0 0 2.09-.61.27.27.0 1 1 .39.4zm-.18-1.71a1 1 0 1 1 1-1 1 1 0 0 1-1.01 1.04z"></path></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}" title="Linkedin" target="_blank">
+              <svg id="icon-linkedin" viewBox="0 0 112.196 112.196"><circle cx="56.098" cy="56.097" r="56.098" fill="#0077b5"></circle><path fill="#fff" d="M89.616 60.611v23.128H76.207V62.161c0-5.418-1.936-9.118-6.791-9.118-3.705.0-5.906 2.491-6.878 4.903-.353.862-.444 2.059-.444 3.268v22.524h-13.41s.18-36.546.0-40.329h13.411v5.715c-.027.045-.065.089-.089.132h.089v-.132c1.782-2.742 4.96-6.662 12.085-6.662 8.822.0 15.436 5.764 15.436 18.149zm-54.96-36.642c-4.587.0-7.588 3.011-7.588 6.967.0 3.872 2.914 6.97 7.412 6.97h.087c4.677.0 7.585-3.098 7.585-6.97-.089-3.956-2.908-6.967-7.496-6.967zm-6.791 59.77H41.27v-40.33H27.865v40.33z"></path></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="scripts/main.js"></script>
+
+
+
+    <!-- <script src="resources/lib/jquery/jquery.min.js"></script> -->
+    <script src="resources/lib/materialize/js/materialize.min.js"></script>
+    <script src="resources/app/js/global_Track_info.js"></script>
+    <script src="resources/app/js/index.js"></script>
+    <script src="indexshare.js"></script>
+    <script src="share.js"></script>
+
+
+    <script src="dist/assets/libs/jquery-knob/jquery.knob.min.js"></script>
+    <script src="dist/assets/libs/morris-js/morris.min.js"></script>
+    <script src="dist/assets/libs/raphael/raphael.min.js"></script>
+    <script src="dist/assets/js/app.min.js"></script>
+    <script src="dist/assets/js/jquery.autocomplete.js"></script>
+    <script src="dist/assets/js/index.js"></script>
+  </body>
+
+</html>
