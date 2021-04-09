@@ -1,0 +1,162 @@
+<html lang="en">
+
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166789725-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166789725-1');
+</script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Covid Markets Map</title>
+    <meta name="description" content="Live Covid-19 Tracker. See Reopening dates, Latest News, Vaccine Tracker, Treatments Source, and learn about prevention measures." />
+    <meta content="covid-19, tracker, covid 19 tracker, covid 19 tracker for ontario, covid 19 tracker canada, covid 19 tracker usa, covid 19 tracker world, covid 19 tracker india, covid 19 tracker live, covid 19 tracker app, covid 19 tracker by state, covid 19 tracker by zip code, covid 19 tracker dashboard, covid 19 blood clots, covid 19 early symptoms, vaccine coronavirus, vaccine covid 19, vaccine news, vaccine covid, reopening the economy, reopening canada, reopening california, reopen america, travel advisory, travel restrictions, coronavirus vaccine, coronavirus vaccine tracker, coronavirus news, covid-19 news, covid-19 treatments, covid, coronavirus tracker, coronavirus news, coronavirus reopening, coronavirus vaccine" name="keywords" />
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://covidmarkets.com/">
+	<meta property="og:title" content="Covid Markets: Vaccine Tracker, Reopening Dates, and more.">
+	<meta property="og:description" content="Live Covid-19 Tracker. See Reopening dates, Latest News, Vaccine Tracker, Treatments Source, and learn about prevention measures.">
+	<meta name="twitter:title" content="Covid Markets: Vaccine Tracker, Reopening Dates, and more.">
+	<meta name="twitter:description" content="Live Covid-19 Tracker. See Reopening dates, Latest News, Vaccine Tracker, Treatments Source, and learn about prevention measures.">
+	<meta name="twitter:creator" content="@NrupPatel13">
+	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="images/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="images/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="images/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="images/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="images/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="images/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="images/mstile-310x310.png" />
+<link rel="canonical" href="https://covidmarkets.com/">
+    <meta name="covidmarkets/environment" content="%7B%22environment%22%3A%22production%22%2C%22modulePrefix%22%3A%22coronavirus-tracker%22%2C%22rootURL%22%3A%22%2Fcoronavirus-tracker%2F%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_DEFAULT_ASYNC_OBSERVERS%22%3Atrue%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22API_HOST%22%3A%22https%3A%2F%2Fcoronavirus-tracker-api.herokuapp.com%22%2C%22name%22%3A%22coronavirus-tracker%22%2C%22version%22%3A%220.0.0%2Be04b13e2%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22isModuleUnification%22%3Afalse%7D" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="map.style.min.css" />
+
+   <script src="miniature.earth.min.js" type="42c53f4d953602f533410ab4-text/javascript"></script>
+    <script src="micromodal.min.js" type="42c53f4d953602f533410ab4-text/javascript"></script>
+    <script src="countUp.min.js" type="42c53f4d953602f533410ab4-text/javascript"></script>
+    <script src="jquery.min.js" defer type="42c53f4d953602f533410ab4-text/javascript"></script>
+    <script src="map/script.min.js" defer type="42c53f4d953602f533410ab4-text/javascript"></script>
+  </head>
+
+
+
+
+  <body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <a class="navbar-brand" href="index.html">Covid Markets <img style="background-color: transparent; width: 28px; height: 28px; margin-bottom: 3px;" src="https://img.icons8.com/emoji/48/000000/microbe.png"/></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>  
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <button class="btn nav-link" id="research" onclick="location.href='../research.html'">
+              <span class="m-icon"><img style="background-color: transparent; width: 28px; height: 28px;"src="https://img.icons8.com/emoji/48/000000/syringe-emoji.png"/></span>
+                 Vaccine Progress
+              </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn nav-link" id="research" onclick="location.href='../reopen.html'">
+              <span class="m-icon"><img  style="background-color: transparent; width: 28px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/locked-with-key.png"/></span>
+                 Reopening 
+              </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn nav-link" id="research" onclick="location.href='../app.html'">
+              <span class="m-icon"><img style="background-color: transparent; width: 28px; height: 28px; margin-top: 2px;" src="https://img.icons8.com/emoji/48/000000/airplane-emoji.png"/></span>
+                 Travel
+              </button>
+          </li>    
+          <li class="nav-item">
+            <button class="btn nav-link" id="data" onclick="location.href='../data.html'">
+              <span class="m-icon"><img  style="background-color: transparent; width: 28px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/crossed-fingers-emoji.png"/></span>
+                 Outcome
+              </button>
+          </li> 
+          <li class="nav-item">
+         <button class="btn nav-link" id="map" onclick="location.href='../map.html'">
+          <span class="m-icon"><img style="background-color: transparent; width: 32px; height: 32px;" src="https://img.icons8.com/emoji/48/000000/globe-showing-americas-emoji.png"/></span>
+               Map
+            </button>
+          </li>    
+          <li class="nav-item">
+            <button class="btn nav-link" id="research" onclick="location.href='../beforeafter.html'">
+              <span class="m-icon"><img  style="background-color: transparent; width: 28px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/information-emoji.png"/></span>
+               Wiki
+            </button>
+          </li>    
+          <li class="nav-item">
+            <button class="btn nav-link" id="research" onclick="location.href='../about.html'">
+              <span class="m-icon"><img  style="background-color: transparent; width: 26px; height: 28px;" src="https://img.icons8.com/emoji/48/000000/blue-book.png"/></span>
+               About
+            </button>
+          </li>    
+        </ul>
+      </div>  
+    </nav>
+
+<section>
+  <div id="particles"></div>
+    <div id="blackout"></div>
+    <div id="globe"></div>
+   
+<style>
+.earth-js::before {
+    content: "";
+    display: block;
+    padding-top: 0%;
+}
+
+
+</style>
+
+  <div id="loader"></div>
+    <div id="footer">
+        <p>
+            <span class="tiny">TOTAL COUNTS</span><br/>
+            ACTIVE:&nbsp;<span id="total-cases">0</span><span id="total-count" class="tiny"></span>
+            <span class="muted">&#8226;</span>
+            &nbsp;DEATHS:&nbsp;<span id="total-deaths">0</span><span id="mortality-rate" class="tiny"></span>
+            <span class="muted">&#8226;</span>
+            &nbsp;RECOVERIES:&nbsp;<span id="total-recovered">0</span><span id="recovery-rate" class="tiny"></span>
+        </p>
+
+</section>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    </body>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="42c53f4d953602f533410ab4-|49" defer=""></script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'57a25a0fcf6474e3',m:'6453d8fbb41d5ae98fa9cef7835f7099ea4eeed6-1585241231-1800-AR9VB5VQibEJkbfQUd/y4aJOQA87TiCbEpsAvdGFJSE7k/Beg/TkicKBs3FObBDoXxbJVK5HsJ9mcwSQelKhlT8gRQYjsn85gBgld2BttlNzVA94idl/xARaC7DgHOYPRg==',s:[0x1a26c8438b,0x7e7dac727b],fb:0,}})();</script></body>
+  </html>
+  
