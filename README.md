@@ -1,6 +1,6 @@
 # 🦠 Covid Markets
 
-This is a website I made to track the ongoing Coronavirus Market Conditions. Get in touch with me for the source code and any other questions! :)
+This is a website I made to track the ongoing Coronavirus Market Conditions. Get in touch with me for questions! :)
 
 [Live Site](http://www.covidmarkets.com/)
 
