@@ -5,7 +5,7 @@
   "dependencies": {
     "country-code-lookup": "0.0.17",
     "mapbox-gl": "^1.9.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
